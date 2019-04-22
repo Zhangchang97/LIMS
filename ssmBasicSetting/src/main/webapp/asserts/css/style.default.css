@@ -173,7 +173,7 @@ body.withmenucoll2 { background-position: 35px 0; } /* with menu style 2 in coll
 	font-family: 'RobotoCondensed', Arial, Helvetica, sans-serif; font-weight: normal; text-transform: uppercase; color: #fb9337;
 	float: left; font-size: 30px; margin: 10px 0;
 }.topheader .left h1.logo a { color: #fb9337; }
-.topheader .left h1.logo span { color: #fff; }
+.topheader .left h1.logo span { color: #fff; font-size: 25px; }
 .topheader .left .slogan { 
 	font-family: 'RobotoCondensed', Arial, Helvetica, sans-serif; float: left; padding: 8px 10px; 
 	border-left: 1px solid #606d84; color: #6a778d; font-style: italic; margin: 2px 10px; 
@@ -258,7 +258,7 @@ body.withmenucoll2 { background-position: 35px 0; } /* with menu style 2 in coll
 
 
 .userinfo { 
-	padding: 6px 18px 6px 6px; background: #32415a url(../images/default/userinfoarrow.png) no-repeat right center; -moz-border-radius: 2px; 
+	padding: 6px 18px 6px 6px; background: #32415a no-repeat right center; -moz-border-radius: 2px;
 	-webkit-border-radius: 2px; border-radius: 2px; -moz-box-shadow: inset 1px 1px 2px #2b384e; float: left; border-bottom: 1px solid #445775;
 	-webkit-box-shadow: inset 1px 1px 2px #2b384e; box-shadow: inset 1px 1px 2px #2b384e; cursor: pointer;
 }
@@ -2490,5 +2490,10 @@ blockquote.bq2 {
 	
 	/* PHOTO SHARING */
 	.photopreview a img { width: 300px; }
-		
+
+
+	/* instrumentpage */
+	from.stdform div.ins div.right {
+		float: right;
+	}
 }

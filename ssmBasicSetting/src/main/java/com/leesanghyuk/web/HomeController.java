@@ -29,6 +29,18 @@ public class HomeController {
         m.setId("a");
         m.setTitle("b");
         l.addAttribute("music", m);
-        return "experimentBookingPage";
+        return "homepage";
+    }
+    @RequestMapping("/experimentpage")
+    public String experimentpage_class(Model ec) {
+        return "experimentpage";
+    }
+    @RequestMapping("/instrumentpage")
+    public String instrumentpage(Model i) {
+        return "instrumentpage";
+    }
+    @RequestMapping("/recordpage")
+    public String recordpage(Model r) {
+        return "recordpage";
     }
 }
