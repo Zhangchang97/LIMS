@@ -15,9 +15,9 @@
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/pro_musician?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf-8" />
+        <property name="url" value="jdbc:mysql://localhost:3306/Experiment?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf-8" />
         <property name="username" value="root" />
-        <property name="password" value="woshixiao" />
+        <property name="password" value="1064174415" />
     </bean>
 
     <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->

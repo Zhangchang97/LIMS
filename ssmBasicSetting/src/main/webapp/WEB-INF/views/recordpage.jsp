@@ -61,7 +61,7 @@
 
     <div class="vernav2 iconmenu">
         <ul>
-            <li><a href="test" class="tables">预约信息表</a></li>
+            <li><a href="index" class="tables">预约信息表</a></li>
             <li><a href="#formsub" class="editor">预约</a>
                 <span class="arrow"></span>
                 <ul id="formsub">
