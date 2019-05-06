@@ -9,4 +9,8 @@
     <select id="UserLoginCheckLevel" parameterType="UserLoginDTO" resultType="String">
         SELECT level FROM userinfo WHERE username=#{username} and password=#{password}
     </select>
+
+    <select id="getExperimentInfo"  resultType="ExperimentInfoDTO">
+        SELECT * FROM experimentinfo
+    </select>
 </mapper>

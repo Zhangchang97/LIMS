@@ -50,7 +50,7 @@
             </div><!--loginf-->
         </div><!--nopassword-->
 
-        <form id="login" action="http://localhost:8081/login.jsp" method="post">
+        <form id="login" action="/login" method="post">
 
             <div class="username">
                 <div class="usernameinner">

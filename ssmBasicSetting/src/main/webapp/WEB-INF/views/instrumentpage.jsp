@@ -116,302 +116,161 @@
                     <h3>实验室仪器预约</h3>
                 </div><!--contenttitle-->
 
-                <form class="stdform" action="" method="post">
-
-                    <div class="ins">
-                        <div class="left">
-                            <p>
-                                <label>超声波清洗仪</label>
-                                <span class="field">
+                <table cellpadding="0" cellspacing="0" border="0" class="stdtable">
+                    <colgroup>
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th class="head0">仪器名称</th>
+                        <th class="head1">是否预约</th>
+                        <th class="head0">预约数量</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th class="head0">仪器名称</th>
+                        <th class="head1">是否预约</th>
+                        <th class="head0">预约数量</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    <tr>
+                        <td><label>超声波清洗仪</label></td>
+                        <td>
                             <select name="select" class="uniformselect">
-                            	 <option value="">预约</option>
+                                <option value="">预约</option>
                                 <option value="" selected="selected">不预约</option>
                             </select>
-                                </span>
-                            </p>
-                        </div>
-                        <div class="right">
-                            <p>
-                                <label>预约数量</label>
-                                <span class="field"><input value="0" type="text" name="input1" class="smallinput" /></span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="left">
-                            <p>
-                                <label>天平</label>
-                                <span class="field">
+                        </td>
+                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>天平</label></td>
+                        <td>
                             <select name="select" class="uniformselect">
-                            	 <option value="">预约</option>
+                                <option value="">预约</option>
                                 <option value="" selected="selected">不预约</option>
                             </select>
-                                </span>
-                            </p>
-                        </div>
-                        <div class="right">
-                            <p>
-                                <label>预约数量</label>
-                                <span class="field"><input value="0" type="text" name="input1" class="smallinput" /></span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="left">
-                            <p>
-                                <label>吹风机</label>
-                                <span class="field">
+                        </td>
+                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>吹风机</label></td>
+                        <td>
                             <select name="select" class="uniformselect">
-                            	 <option value="">预约</option>
+                                <option value="">预约</option>
                                 <option value="" selected="selected">不预约</option>
                             </select>
-                                </span>
-                            </p>
-                        </div>
-                        <div class="right">
-                            <p>
-                                <label>预约数量</label>
-                                <span class="field"><input value="0" type="text" name="input1" class="smallinput" /></span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="left">
-                            <p>
-                                <label>水浴箱</label>
-                                <span class="field">
+                        </td>
+                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>水浴箱</label></td>
+                        <td>
                             <select name="select" class="uniformselect">
-                            	 <option value="">预约</option>
+                                <option value="">预约</option>
                                 <option value="" selected="selected">不预约</option>
                             </select>
-                                </span>
-                            </p>
-                        </div>
-                        <div class="right">
-                            <p>
-                                <label>预约数量</label>
-                                <span class="field"><input value="0" type="text" name="input1" class="smallinput" /></span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="left">
-                            <p>
-                                <label>箱式电阻炉</label>
-                                <span class="field">
+                        </td>
+                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>箱式电阻炉</label></td>
+                        <td>
                             <select name="select" class="uniformselect">
-                            	 <option value="">预约</option>
+                                <option value="">预约</option>
                                 <option value="" selected="selected">不预约</option>
                             </select>
-                                </span>
-                            </p>
-                        </div>
-                        <div class="right">
-                            <p>
-                                <label>预约数量</label>
-                                <span class="field"><input value="0" type="text" name="input1" class="smallinput" /></span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="left">
-                            <p>
-                                <label>抛光机</label>
-                                <span class="field">
+                        </td>
+                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>抛光机</label></td>
+                        <td>
                             <select name="select" class="uniformselect">
-                            	 <option value="">预约</option>
+                                <option value="">预约</option>
                                 <option value="" selected="selected">不预约</option>
                             </select>
-                                </span>
-                            </p>
-                        </div>
-                        <div class="right">
-                            <p>
-                                <label>预约数量</label>
-                                <span class="field"><input value="0" type="text" name="input1" class="smallinput" /></span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="left">
-                            <p>
-                                <label>预磨机</label>
-                                <span class="field">
+                        </td>
+                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>预磨机</label></td>
+                        <td>
                             <select name="select" class="uniformselect">
-                            	 <option value="">预约</option>
+                                <option value="">预约</option>
                                 <option value="" selected="selected">不预约</option>
                             </select>
-                                </span>
-                            </p>
-                        </div>
-                        <div class="right">
-                            <p>
-                                <label>预约数量</label>
-                                <span class="field"><input value="0" type="text" name="input1" class="smallinput" /></span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="left">
-                            <p>
-                                <label>砂轮</label>
-                                <span class="field">
+                        </td>
+                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>砂轮</label></td>
+                        <td>
                             <select name="select" class="uniformselect">
-                            	 <option value="">预约</option>
+                                <option value="">预约</option>
                                 <option value="" selected="selected">不预约</option>
                             </select>
-                                </span>
-                            </p>
-                        </div>
-                        <div class="right">
-                            <p>
-                                <label>预约数量</label>
-                                <span class="field"><input value="0" type="text" name="input1" class="smallinput" /></span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="left">
-                            <p>
-                                <label>燃烧热实验装置</label>
-                                <span class="field">
+                        </td>
+                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>燃烧实验装置</label></td>
+                        <td>
                             <select name="select" class="uniformselect">
-                            	 <option value="">预约</option>
+                                <option value="">预约</option>
                                 <option value="" selected="selected">不预约</option>
                             </select>
-                                </span>
-                            </p>
-                        </div>
-                        <div class="right">
-                            <p>
-                                <label>预约数量</label>
-                                <span class="field"><input value="0" type="text" name="input1" class="smallinput" /></span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="left">
-                            <p>
-                                <label>可控温电炉</label>
-                                <span class="field">
+                        </td>
+                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>可控温电炉</label></td>
+                        <td>
                             <select name="select" class="uniformselect">
-                            	 <option value="">预约</option>
+                                <option value="">预约</option>
                                 <option value="" selected="selected">不预约</option>
                             </select>
-                                </span>
-                            </p>
-                        </div>
-                        <div class="right">
-                            <p>
-                                <label>预约数量</label>
-                                <span class="field"><input value="0" type="text" name="input1" class="smallinput" /></span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="left">
-                            <p>
-                                <label>显微维式硬度计</label>
-                                <span class="field">
+                        </td>
+                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>显微维式硬度计</label></td>
+                        <td>
                             <select name="select" class="uniformselect">
-                            	 <option value="">预约</option>
+                                <option value="">预约</option>
                                 <option value="" selected="selected">不预约</option>
                             </select>
-                                </span>
-                            </p>
-                        </div>
-                        <div class="right">
-                            <p>
-                                <label>预约数量</label>
-                                <span class="field"><input value="0" type="text" name="input1" class="smallinput" /></span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="left">
-                            <p>
-                                <label>显微镜（带成像系统）</label>
-                                <span class="field">
+                        </td>
+                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>显微镜（带成像系统）</label></td>
+                        <td>
                             <select name="select" class="uniformselect">
-                            	 <option value="">预约</option>
+                                <option value="">预约</option>
                                 <option value="" selected="selected">不预约</option>
                             </select>
-                                </span>
-                            </p>
-                        </div>
-                        <div class="right">
-                            <p>
-                                <label>预约数量</label>
-                                <span class="field"><input value="0" type="text" name="input1" class="smallinput" /></span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="left">
-                            <p>
-                                <label>光学显微镜</label>
-                                <span class="field">
+                        </td>
+                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>光学显微镜</label></td>
+                        <td>
                             <select name="select" class="uniformselect">
-                            	 <option value="">预约</option>
+                                <option value="">预约</option>
                                 <option value="" selected="selected">不预约</option>
                             </select>
-                                </span>
-                            </p>
-                        </div>
-                        <div class="right">
-                            <p>
-                                <label>预约数量</label>
-                                <span class="field"><input value="0" type="text" name="input1" class="smallinput" /></span>
-                            </p>
-                        </div>
-                    </div>
+                        </td>
+                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
+                    </tr>
+                    </tbody>
+                </table>
 
-                    <p>
-                        <label>教室选择</label>
-                        <span class="field">
-                            <select name="select" class="uniformselect">
-                            	<option value="">B405</option>
-                                <option value="">B407</option>
-                                <option value="">B409</option>
-                                <option value="">B411</option>
-                            </select>
-                        </span>
-                    </p>
 
-                    <p>
-                        <label>时间选择</label>
-                        <span class="field">
-                            <select name="select" class="uniformselect">
-                            	<option value="">9：00-10:00</option>
-                                <option value="">10:00-11:00</option>
-                                <option value="">15:00-16:00</option>
-                                <option value="">16:00-17:00</option>
-                                <option value="">18:00-19:00</option>
-                                <option value="">19:00-20:00</option>
-                            </select>
-                        </span>
-                    </p>
-
-                    <br clear="all" /><br />
-
-                    <p class="stdformbutton">
-                        <button class="submit radius2">提交</button>
-                        <input type="reset" class="reset radius2" value="撤销" />
-                    </p>
-
-                </form>
 
             </div><!--subcontent-->
 

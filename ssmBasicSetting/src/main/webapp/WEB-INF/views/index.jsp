@@ -142,148 +142,121 @@
                 </tfoot>
                 <tbody>
                 <tr>
-                    <td>工程材料A</td>
-                    <td>非平衡组织观察分析</td>
-                    <td>金相显微镜 4*1</td>
-                    <td class="center">27</td>
-                    <td class="center">60分钟</td>
-                    <td>B405</td>
-                    <td>35</td>
+                    <td name="coursename"><a href="experimentpage"></a></td>
+                    <td name="experimentname">非平衡组织观察分析</td>
+                    <td name="facility">金相显微镜 4*1</td>
+                    <td class="center" name="quantityoffacility">27</td>
+                    <td class="center" name="duration">60分钟</td>
+                    <td name="classroom">B405</td>
+                    <td name="bookings">35</td>
                 </tr>
                 <tr>
-                    <td>工程材料A</td>
-                    <td>热处理及硬度</td>
-                    <td>电阻炉，预磨机，硬度计</td>
-                    <td class="center">3,2,2</td>
-                    <td class="center">60分钟</td>
-                    <td>
-                        <table>
-                            <tr>
-                                <td>B407</td>
-                            </tr>
-                            <tr>
-                                <td>B409</td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td>
-                        <table>
-                            <tr>
-                                <td>20</td>
-                            </tr>
-                            <tr>
-                                <td>20</td>
-                            </tr>
-                        </table>
-                    </td>
+                    <td name="coursename"><a href="experimentpage">工程材料A</a></td>
+                    <td name="experimentname">热处理及硬度</td>
+                    <td name="facility">电阻炉，预磨机，硬度计</td>
+                    <td class="center" name="quantityoffacility">3,2,2</td>
+                    <td class="center" name="duration">60分钟</td>
+                    <td name="classroom">B407</td>
+                    <td name="bookings">20</td>
                 </tr>
                 <tr>
-                    <td>工程材料B</td>
-                    <td>铁碳平衡组织观察分析</td>
-                    <td>金相显微镜 4*1</td>
-                    <td class="center">27</td>
-                    <td class="center">60分钟</td>
-                    <td>B405</td>
-                    <td>35</td>
+                    <td name="coursename"><a href="experimentpage">工程材料A</a></td>
+                    <td name="experimentname">热处理及硬度</td>
+                    <td name="facility">电阻炉，预磨机，硬度计</td>
+                    <td class="center" name="quantityoffacility">3,2,2</td>
+                    <td class="center" name="duration">60分钟</td>
+                    <td name="classroom">B409</td>
+                    <td name="bookings">20</td>
                 </tr>
                 <tr>
-                    <td>工程材料B</td>
-                    <td>热处理及硬度</td>
-                    <td>电阻炉，预磨机，硬度计</td>
-                    <td class="center">3，2，2</td>
-                    <td class="center">60分钟</td>
-                    <td>
-                        <table>
-                            <tr>
-                                <td>B407</td>
-                            </tr>
-                            <tr>
-                                <td>B409</td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td>
-                        <table>
-                            <tr>
-                                <td>20</td>
-                            </tr>
-                            <tr>
-                                <td>20</td>
-                            </tr>
-                        </table>
-                    </td>
+                    <td name="coursename"><a href="experimentpage">工程材料B</a></td>
+                    <td name="experimentname">铁碳平衡组织观察分析</td>
+                    <td name="facility">金相显微镜 4*1</td>
+                    <td class="center" name="quantityoffacility">27</td>
+                    <td class="center" name="duration">60分钟</td>
+                    <td name="classroom">B405</td>
+                    <td name="bookings">35</td>
                 </tr>
                 <tr>
-                    <td>材料科学基础</td>
-                    <td>平衡组织观察分析</td>
-                    <td>金相显微镜 4*1</td>
-                    <td class="center">27</td>
-                    <td class="center">60分钟</td>
-                    <td>B405</td>
-                    <td>35</td>
+                    <td name="coursename"><a href="experimentpage">工程材料B</a></td>
+                    <td name="experimentname">热处理及硬度</td>
+                    <td name="facility">电阻炉，预磨机，硬度计</td>
+                    <td class="center" name="quantityoffacility">3，2，2</td>
+                    <td class="center" name="duration">60分钟</td>
+                    <td name="classroom">B407</td>
+                    <td name="bookings">20</td>
                 </tr>
                 <tr>
-                    <td>材料科学基础</td>
-                    <td>金相试样制备+</td>
-                    <td>预磨机，抛光机，显微镜</td>
-                    <td class="center"></td>
-                    <td class="center">60分钟</td>
-                    <td>
-                        <table>
-                            <tr>
-                                <td>B405</td>
-                            </tr>
-                            <tr>
-                                <td>B407</td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td>
-                        <table>
-                            <tr>
-                                <td>25</td>
-                            </tr>
-                            <tr>
-                                <td>25</td>
-                            </tr>
-                        </table>
-                    </td>
+                    <td name="coursename"><a href="experimentpage">工程材料B</a></td>
+                    <td name="experimentname">热处理及硬度</td>
+                    <td name="facility">电阻炉，预磨机，硬度计</td>
+                    <td class="center" name="quantityoffacility">3，2，2</td>
+                    <td class="center" name="duration">60分钟</td>
+                    <td name="classroom">B409</td>
+                    <td name="bookings">20</td>
                 </tr>
                 <tr>
-                    <td>材料科学基础</td>
-                    <td>二元合金相图</td>
-                    <td>可控温升炉</td>
-                    <td class="center">12</td>
-                    <td class="center">45分钟</td>
-                    <td>B411</td>
-                    <td>30</td>
+                    <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
+                    <td name="experimentname">平衡组织观察分析</td>
+                    <td name="facility">金相显微镜 4*1</td>
+                    <td class="center" name="quantityoffacility">27</td>
+                    <td class="center" name="duration">60分钟</td>
+                    <td name="classroom">B405</td>
+                    <td name="bookings">35</td>
                 </tr>
                 <tr>
-                    <td>材料热力学与物理化学</td>
-                    <td>原电池电动势</td>
-                    <td>原电池电动势测定装置</td>
-                    <td class="center">12</td>
-                    <td class="center">45分钟</td>
-                    <td>B411</td>
-                    <td>25</td>
+                    <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
+                    <td name="experimentname">金相试样制备+</td>
+                    <td name="facility">预磨机，抛光机，显微镜</td>
+                    <td class="center" name="quantityoffacility"></td>
+                    <td class="center" name="duration">60分钟</td>
+                    <td name="classroom">B405</td>
+                    <td name="bookings">25</td>
                 </tr>
                 <tr>
-                    <td>材料热力学与物理化学</td>
-                    <td>燃烧热测定</td>
-                    <td>燃烧热测定装置</td>
-                    <td class="center">12</td>
-                    <td class="center">60分钟</td>
-                    <td>B411</td>
-                    <td>25</td>
+                    <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
+                    <td name="experimentname">金相试样制备+</td>
+                    <td name="facility">预磨机，抛光机，显微镜</td>
+                    <td class="center" name="quantityoffacility"></td>
+                    <td class="center" name="duration">60分钟</td>
+                    <td name="classroom">B407</td>
+                    <td name="bookings">25</td>
                 </tr>
                 <tr>
-                    <td>材料热力学与物理化学</td>
-                    <td>乙酸乙酯的皂化</td>
-                    <td>水浴箱，电导率仪</td>
-                    <td class="center">12</td>
-                    <td class="center">60分钟</td>
-                    <td>B411</td>
-                    <td>25</td>
+                    <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
+                    <td name="experimentname">二元合金相图</td>
+                    <td name="facility">可控温升炉</td>
+                    <td class="center" name="quantityoffacility">12</td>
+                    <td class="center" name="duration">45分钟</td>
+                    <td name="classroom">B411</td>
+                    <td name="bookings">30</td>
+                </tr>
+                <tr>
+                    <td name="coursename"><a href="experimentpage">材料热力学与物理化学</a></td>
+                    <td name="experimentname">原电池电动势</td>
+                    <td name="facility">原电池电动势测定装置</td>
+                    <td class="center" name="quantityoffacility">12</td>
+                    <td class="center" name="duration">45分钟</td>
+                    <td name="classroom">B411</td>
+                    <td name="bookings">25</td>
+                </tr>
+                <tr>
+                    <td name="coursename"><a href="experimentpage">材料热力学与物理化学</a></td>
+                    <td name="experimentname">燃烧热测定</td>
+                    <td name="facility">燃烧热测定装置</td>
+                    <td class="center" name="quantityoffacility">12</td>
+                    <td class="center" name="duration">60分钟</td>
+                    <td name="classroom">B411</td>
+                    <td name="bookings">25</td>
+                </tr>
+                <tr>
+                    <td name="coursename"><a href="experimentpage">材料热力学与物理化学</a></td>
+                    <td name="experimentname">乙酸乙酯的皂化</td>
+                    <td name="facility">水浴箱，电导率仪</td>
+                    <td class="center" name="quantityoffacility">12</td>
+                    <td class="center" name="duration">60分钟</td>
+                    <td name="classroom">B411</td>
+                    <td name="bookings">25</td>
                 </tr>
                 </tbody>
             </table>

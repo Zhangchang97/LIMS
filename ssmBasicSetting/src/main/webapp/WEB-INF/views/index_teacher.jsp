@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: 10641
-  Date: 2019/3/26
-  Time: 17:25
+  Date: 2019/4/29
+  Time: 13:52
   To change this template use File | Settings | File Templates.
 --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -72,22 +72,22 @@
             <%--<li><a href="asserts/typography.html" class="typo">Typography</a></li>--%>
             <%--<li><a href="asserts/buttons.html" class="buttons">Buttons &amp; Icons</a></li>--%>
             <%--<li><a href="#error" class="error">Error Pages</a>--%>
-                <%--<span class="arrow"></span>--%>
-                <%--<ul id="error">--%>
-                    <%--<li><a href="asserts/notfound.html">Page Not Found</a></li>--%>
-                    <%--<li><a href="asserts/forbidden.html">Forbidden Page</a></li>--%>
-                    <%--<li><a href="asserts/internal.html">Internal Server Error</a></li>--%>
-                    <%--<li><a href="asserts/offline.html">Offline</a></li>--%>
-                <%--</ul>--%>
+            <%--<span class="arrow"></span>--%>
+            <%--<ul id="error">--%>
+            <%--<li><a href="asserts/notfound.html">Page Not Found</a></li>--%>
+            <%--<li><a href="asserts/forbidden.html">Forbidden Page</a></li>--%>
+            <%--<li><a href="asserts/internal.html">Internal Server Error</a></li>--%>
+            <%--<li><a href="asserts/offline.html">Offline</a></li>--%>
+            <%--</ul>--%>
             <%--</li>--%>
             <%--<li><a href="#addons" class="addons">Addons</a>--%>
-                <%--<span class="arrow"></span>--%>
-                <%--<ul id="addons">--%>
-                    <%--<li><a href="asserts/newsfeed.html">News Feed</a></li>--%>
-                    <%--<li><a href="asserts/profile.html">Profile Page</a></li>--%>
-                    <%--<li><a href="asserts/productlist.html">Product List</a></li>--%>
-                    <%--<li><a href="asserts/photo.html">Photo/Video Sharing</a></li>--%>
-                <%--</ul>--%>
+            <%--<span class="arrow"></span>--%>
+            <%--<ul id="addons">--%>
+            <%--<li><a href="asserts/newsfeed.html">News Feed</a></li>--%>
+            <%--<li><a href="asserts/profile.html">Profile Page</a></li>--%>
+            <%--<li><a href="asserts/productlist.html">Product List</a></li>--%>
+            <%--<li><a href="asserts/photo.html">Photo/Video Sharing</a></li>--%>
+            <%--</ul>--%>
             <%--</li>--%>
         </ul>
         <a class="togglemenu"></a>
@@ -117,6 +117,7 @@
                     <col class="con0" />
                     <col class="con1" />
                     <col class="con0" />
+                    <col class="con1" />
                 </colgroup>
                 <thead>
                 <tr>
@@ -127,6 +128,7 @@
                     <th class="head0">时长</th>
                     <th class="head1">可用教室</th>
                     <th class="head0">可预约人数</th>
+                    <th class="head1">操作</th>
                 </tr>
                 </thead>
                 <tfoot>
@@ -138,17 +140,19 @@
                     <th class="head0">时长</th>
                     <th class="head1">可用教室</th>
                     <th class="head0">可预约人数</th>
+                    <th class="head1">操作</th>
                 </tr>
                 </tfoot>
                 <tbody>
                 <tr>
-                    <td name="coursename"><a href="experimentpage"></a></td>
+                    <td name="coursename"><a href="experimentpage">工程材料A</a></td>
                     <td name="experimentname">非平衡组织观察分析</td>
                     <td name="facility">金相显微镜 4*1</td>
                     <td class="center" name="quantityoffacility">27</td>
                     <td class="center" name="duration">60分钟</td>
                     <td name="classroom">B405</td>
                     <td name="bookings">35</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 <tr>
                     <td name="coursename"><a href="experimentpage">工程材料A</a></td>
@@ -158,6 +162,7 @@
                     <td class="center" name="duration">60分钟</td>
                     <td name="classroom">B407</td>
                     <td name="bookings">20</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 <tr>
                     <td name="coursename"><a href="experimentpage">工程材料A</a></td>
@@ -167,6 +172,7 @@
                     <td class="center" name="duration">60分钟</td>
                     <td name="classroom">B409</td>
                     <td name="bookings">20</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 <tr>
                     <td name="coursename"><a href="experimentpage">工程材料B</a></td>
@@ -176,6 +182,7 @@
                     <td class="center" name="duration">60分钟</td>
                     <td name="classroom">B405</td>
                     <td name="bookings">35</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 <tr>
                     <td name="coursename"><a href="experimentpage">工程材料B</a></td>
@@ -185,6 +192,7 @@
                     <td class="center" name="duration">60分钟</td>
                     <td name="classroom">B407</td>
                     <td name="bookings">20</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 <tr>
                     <td name="coursename"><a href="experimentpage">工程材料B</a></td>
@@ -194,6 +202,7 @@
                     <td class="center" name="duration">60分钟</td>
                     <td name="classroom">B409</td>
                     <td name="bookings">20</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 <tr>
                     <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
@@ -203,6 +212,7 @@
                     <td class="center" name="duration">60分钟</td>
                     <td name="classroom">B405</td>
                     <td name="bookings">35</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 <tr>
                     <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
@@ -212,6 +222,7 @@
                     <td class="center" name="duration">60分钟</td>
                     <td name="classroom">B405</td>
                     <td name="bookings">25</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 <tr>
                     <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
@@ -221,6 +232,7 @@
                     <td class="center" name="duration">60分钟</td>
                     <td name="classroom">B407</td>
                     <td name="bookings">25</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 <tr>
                     <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
@@ -230,6 +242,7 @@
                     <td class="center" name="duration">45分钟</td>
                     <td name="classroom">B411</td>
                     <td name="bookings">30</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 <tr>
                     <td name="coursename"><a href="experimentpage">材料热力学与物理化学</a></td>
@@ -239,6 +252,7 @@
                     <td class="center" name="duration">45分钟</td>
                     <td name="classroom">B411</td>
                     <td name="bookings">25</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 <tr>
                     <td name="coursename"><a href="experimentpage">材料热力学与物理化学</a></td>
@@ -248,6 +262,7 @@
                     <td class="center" name="duration">60分钟</td>
                     <td name="classroom">B411</td>
                     <td name="bookings">25</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 <tr>
                     <td name="coursename"><a href="experimentpage">材料热力学与物理化学</a></td>
@@ -257,6 +272,7 @@
                     <td class="center" name="duration">60分钟</td>
                     <td name="classroom">B411</td>
                     <td name="bookings">25</td>
+                    <td><a href="/index_teacher_update">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 </tbody>
             </table>
@@ -275,25 +291,31 @@
                     <col class="con1" />
                     <col class="con0" />
                     <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
                 </colgroup>
                 <thead>
                 <tr>
                     <th class="head0">仪器名称</th>
                     <th class="head1">仪器级别</th>
                     <th class="head0">可预约仪器数量</th>
-                    <th class="head1">仪器名称</th>
-                    <th class="head0">仪器级别</th>
-                    <th class="head1">可预约仪器数量</th>
+                    <th class="head1">操作</th>
+                    <th class="head0">仪器名称</th>
+                    <th class="head1">仪器级别</th>
+                    <th class="head0">可预约仪器数量</th>
+                    <th class="head1">操作</th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
                     <th class="head0">仪器名称</th>
                     <th class="head1">仪器级别</th>
-                    <th class="head0">仪器数量</th>
-                    <th class="head1">仪器名称</th>
-                    <th class="head0">仪器级别</th>
-                    <th class="head1">仪器数量</th>
+                    <th class="head0">可预约仪器数量</th>
+                    <th class="head1">操作</th>
+                    <th class="head0">仪器名称</th>
+                    <th class="head1">仪器级别</th>
+                    <th class="head0">可预约仪器数量</th>
+                    <th class="head1">操作</th>
                 </tr>
                 </tfoot>
                 <tbody>
@@ -301,57 +323,71 @@
                     <td>超声波清洗仪</td>
                     <td>一般仪器</td>
                     <td>1</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                     <td class="center">天平</td>
                     <td class="center">一般仪器</td>
                     <td class="center">2</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 <tr>
                     <td>吹风机</td>
                     <td>一般仪器</td>
                     <td>1</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                     <td class="center">水浴箱</td>
                     <td class="center">一般仪器</td>
                     <td class="center">10</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 <tr>
                     <td>箱式电阻炉</td>
                     <td>危险仪器</td>
                     <td>3</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                     <td class="center">抛光机</td>
                     <td class="center">危险仪器</td>
                     <td class="center">6</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 <tr>
                     <td>预磨机</td>
                     <td>危险仪器</td>
                     <td>2</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                     <td class="center">砂轮</td>
                     <td class="center">危险仪器</td>
                     <td class="center">1</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 <tr>
                     <td>燃烧热实验装置</td>
                     <td>危险仪器</td>
                     <td>12</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                     <td class="center">可控温电炉</td>
                     <td class="center">危险仪器</td>
                     <td class="center">10</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 <tr>
                     <td>显微维式硬度计</td>
                     <td>精密仪器</td>
                     <td>1</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                     <td class="center">显微镜（带成像系统）</td>
                     <td class="center">精密仪器</td>
                     <td class="center">1</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 <tr>
                     <td>光学显微镜</td>
                     <td>精密仪器</td>
                     <td>27</td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                     <td class="center"></td>
                     <td class="center"></td>
                     <td class="center"></td>
+                    <td><a href="#">更新</a>  <a href="#">删除</a></td>
                 </tr>
                 </tbody>
             </table>
@@ -368,5 +404,4 @@
 
 </body>
 </html>
-
 
