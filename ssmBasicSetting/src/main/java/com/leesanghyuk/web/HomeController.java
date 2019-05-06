@@ -65,8 +65,8 @@ public class HomeController {
 
     @RequestMapping("/index")
     public String index(Model model) {
-//        List<ExperimentInfoDTO> experimentInfoDTOList = getexperimentinfoservice.getExperimentInfo();
-//        model.addAttribute("experimentinfo",experimentInfoDTOList);
+        List<ExperimentInfoDTO> experimentInfoDTOList = getexperimentinfoservice.getExperimentInfo();
+        model.addAttribute("experimentinfo",experimentInfoDTOList);
         return "index";
     }
 

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 10641
@@ -104,162 +105,165 @@
 
         <div id="contentwrapper" class="contentwrapper">
 
+
+
             <div class="contenttitle2">
                 <h3>实验课程信息表</h3>
             </div><!--contenttitle-->
-
-            <table cellpadding="0" cellspacing="0" border="0" class="stdtable">
-                <colgroup>
-                    <col class="con0" />
-                    <col class="con1" />
-                    <col class="con0" />
-                    <col class="con1" />
-                    <col class="con0" />
-                    <col class="con1" />
-                    <col class="con0" />
-                </colgroup>
-                <thead>
-                <tr>
-                    <th class="head0">课程名称</th>
-                    <th class="head1">实验名称</th>
-                    <th class="head0">使用仪器</th>
-                    <th class="head1">仪器数量</th>
-                    <th class="head0">时长</th>
-                    <th class="head1">可用教室</th>
-                    <th class="head0">可预约人数</th>
-                </tr>
-                </thead>
-                <tfoot>
-                <tr>
-                    <th class="head0">课程名称</th>
-                    <th class="head1">实验名称</th>
-                    <th class="head0">使用仪器</th>
-                    <th class="head1">仪器数量</th>
-                    <th class="head0">时长</th>
-                    <th class="head1">可用教室</th>
-                    <th class="head0">可预约人数</th>
-                </tr>
-                </tfoot>
-                <tbody>
-                <tr>
-                    <td name="coursename"><a href="experimentpage"></a></td>
-                    <td name="experimentname">非平衡组织观察分析</td>
-                    <td name="facility">金相显微镜 4*1</td>
-                    <td class="center" name="quantityoffacility">27</td>
-                    <td class="center" name="duration">60分钟</td>
-                    <td name="classroom">B405</td>
-                    <td name="bookings">35</td>
-                </tr>
-                <tr>
-                    <td name="coursename"><a href="experimentpage">工程材料A</a></td>
-                    <td name="experimentname">热处理及硬度</td>
-                    <td name="facility">电阻炉，预磨机，硬度计</td>
-                    <td class="center" name="quantityoffacility">3,2,2</td>
-                    <td class="center" name="duration">60分钟</td>
-                    <td name="classroom">B407</td>
-                    <td name="bookings">20</td>
-                </tr>
-                <tr>
-                    <td name="coursename"><a href="experimentpage">工程材料A</a></td>
-                    <td name="experimentname">热处理及硬度</td>
-                    <td name="facility">电阻炉，预磨机，硬度计</td>
-                    <td class="center" name="quantityoffacility">3,2,2</td>
-                    <td class="center" name="duration">60分钟</td>
-                    <td name="classroom">B409</td>
-                    <td name="bookings">20</td>
-                </tr>
-                <tr>
-                    <td name="coursename"><a href="experimentpage">工程材料B</a></td>
-                    <td name="experimentname">铁碳平衡组织观察分析</td>
-                    <td name="facility">金相显微镜 4*1</td>
-                    <td class="center" name="quantityoffacility">27</td>
-                    <td class="center" name="duration">60分钟</td>
-                    <td name="classroom">B405</td>
-                    <td name="bookings">35</td>
-                </tr>
-                <tr>
-                    <td name="coursename"><a href="experimentpage">工程材料B</a></td>
-                    <td name="experimentname">热处理及硬度</td>
-                    <td name="facility">电阻炉，预磨机，硬度计</td>
-                    <td class="center" name="quantityoffacility">3，2，2</td>
-                    <td class="center" name="duration">60分钟</td>
-                    <td name="classroom">B407</td>
-                    <td name="bookings">20</td>
-                </tr>
-                <tr>
-                    <td name="coursename"><a href="experimentpage">工程材料B</a></td>
-                    <td name="experimentname">热处理及硬度</td>
-                    <td name="facility">电阻炉，预磨机，硬度计</td>
-                    <td class="center" name="quantityoffacility">3，2，2</td>
-                    <td class="center" name="duration">60分钟</td>
-                    <td name="classroom">B409</td>
-                    <td name="bookings">20</td>
-                </tr>
-                <tr>
-                    <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
-                    <td name="experimentname">平衡组织观察分析</td>
-                    <td name="facility">金相显微镜 4*1</td>
-                    <td class="center" name="quantityoffacility">27</td>
-                    <td class="center" name="duration">60分钟</td>
-                    <td name="classroom">B405</td>
-                    <td name="bookings">35</td>
-                </tr>
-                <tr>
-                    <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
-                    <td name="experimentname">金相试样制备+</td>
-                    <td name="facility">预磨机，抛光机，显微镜</td>
-                    <td class="center" name="quantityoffacility"></td>
-                    <td class="center" name="duration">60分钟</td>
-                    <td name="classroom">B405</td>
-                    <td name="bookings">25</td>
-                </tr>
-                <tr>
-                    <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
-                    <td name="experimentname">金相试样制备+</td>
-                    <td name="facility">预磨机，抛光机，显微镜</td>
-                    <td class="center" name="quantityoffacility"></td>
-                    <td class="center" name="duration">60分钟</td>
-                    <td name="classroom">B407</td>
-                    <td name="bookings">25</td>
-                </tr>
-                <tr>
-                    <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
-                    <td name="experimentname">二元合金相图</td>
-                    <td name="facility">可控温升炉</td>
-                    <td class="center" name="quantityoffacility">12</td>
-                    <td class="center" name="duration">45分钟</td>
-                    <td name="classroom">B411</td>
-                    <td name="bookings">30</td>
-                </tr>
-                <tr>
-                    <td name="coursename"><a href="experimentpage">材料热力学与物理化学</a></td>
-                    <td name="experimentname">原电池电动势</td>
-                    <td name="facility">原电池电动势测定装置</td>
-                    <td class="center" name="quantityoffacility">12</td>
-                    <td class="center" name="duration">45分钟</td>
-                    <td name="classroom">B411</td>
-                    <td name="bookings">25</td>
-                </tr>
-                <tr>
-                    <td name="coursename"><a href="experimentpage">材料热力学与物理化学</a></td>
-                    <td name="experimentname">燃烧热测定</td>
-                    <td name="facility">燃烧热测定装置</td>
-                    <td class="center" name="quantityoffacility">12</td>
-                    <td class="center" name="duration">60分钟</td>
-                    <td name="classroom">B411</td>
-                    <td name="bookings">25</td>
-                </tr>
-                <tr>
-                    <td name="coursename"><a href="experimentpage">材料热力学与物理化学</a></td>
-                    <td name="experimentname">乙酸乙酯的皂化</td>
-                    <td name="facility">水浴箱，电导率仪</td>
-                    <td class="center" name="quantityoffacility">12</td>
-                    <td class="center" name="duration">60分钟</td>
-                    <td name="classroom">B411</td>
-                    <td name="bookings">25</td>
-                </tr>
-                </tbody>
-            </table>
+            <c:forEach var="experimentinfodto"   items="${experimentinfo}"   varStatus="status">
+                <table cellpadding="0" cellspacing="0" border="0" class="stdtable">
+                    <colgroup>
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th class="head0">课程名称</th>
+                        <th class="head1">实验名称</th>
+                        <th class="head0">使用仪器</th>
+                        <th class="head1">仪器数量</th>
+                        <th class="head0">时长</th>
+                        <th class="head1">可用教室</th>
+                        <th class="head0">可预约人数</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th class="head0">课程名称</th>
+                        <th class="head1">实验名称</th>
+                        <th class="head0">使用仪器</th>
+                        <th class="head1">仪器数量</th>
+                        <th class="head0">时长</th>
+                        <th class="head1">可用教室</th>
+                        <th class="head0">可预约人数</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    <tr>
+                        <td name="coursename"><a href="experimentpage">${experimentinfodto.coursename}</a></td>
+                        <td name="experimentname">${experimentinfodto.experimentname}</td>
+                        <td name="facility">${experimentinfodto.facility}</td>
+                        <td class="center" name="quantityoffacility">${experimentinfodto.quantityoffacility}</td>
+                        <td class="center" name="duration">${experimentinfodto.duration}</td>
+                        <td name="classroom">${experimentinfodto.classroom}</td>
+                        <td name="bookings">${experimentinfodto.numberofbooking}</td>
+                    </tr>
+                    <tr>
+                        <td name="coursename"><a href="experimentpage">工程材料A</a></td>
+                        <td name="experimentname">热处理及硬度</td>
+                        <td name="facility">电阻炉，预磨机，硬度计</td>
+                        <td class="center" name="quantityoffacility">3,2,2</td>
+                        <td class="center" name="duration">60分钟</td>
+                        <td name="classroom">B407</td>
+                        <td name="bookings">20</td>
+                    </tr>
+                    <tr>
+                        <td name="coursename"><a href="experimentpage">工程材料A</a></td>
+                        <td name="experimentname">热处理及硬度</td>
+                        <td name="facility">电阻炉，预磨机，硬度计</td>
+                        <td class="center" name="quantityoffacility">3,2,2</td>
+                        <td class="center" name="duration">60分钟</td>
+                        <td name="classroom">B409</td>
+                        <td name="bookings">20</td>
+                    </tr>
+                    <tr>
+                        <td name="coursename"><a href="experimentpage">工程材料B</a></td>
+                        <td name="experimentname">铁碳平衡组织观察分析</td>
+                        <td name="facility">金相显微镜 4*1</td>
+                        <td class="center" name="quantityoffacility">27</td>
+                        <td class="center" name="duration">60分钟</td>
+                        <td name="classroom">B405</td>
+                        <td name="bookings">35</td>
+                    </tr>
+                    <tr>
+                        <td name="coursename"><a href="experimentpage">工程材料B</a></td>
+                        <td name="experimentname">热处理及硬度</td>
+                        <td name="facility">电阻炉，预磨机，硬度计</td>
+                        <td class="center" name="quantityoffacility">3，2，2</td>
+                        <td class="center" name="duration">60分钟</td>
+                        <td name="classroom">B407</td>
+                        <td name="bookings">20</td>
+                    </tr>
+                    <tr>
+                        <td name="coursename"><a href="experimentpage">工程材料B</a></td>
+                        <td name="experimentname">热处理及硬度</td>
+                        <td name="facility">电阻炉，预磨机，硬度计</td>
+                        <td class="center" name="quantityoffacility">3，2，2</td>
+                        <td class="center" name="duration">60分钟</td>
+                        <td name="classroom">B409</td>
+                        <td name="bookings">20</td>
+                    </tr>
+                    <tr>
+                        <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
+                        <td name="experimentname">平衡组织观察分析</td>
+                        <td name="facility">金相显微镜 4*1</td>
+                        <td class="center" name="quantityoffacility">27</td>
+                        <td class="center" name="duration">60分钟</td>
+                        <td name="classroom">B405</td>
+                        <td name="bookings">35</td>
+                    </tr>
+                    <tr>
+                        <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
+                        <td name="experimentname">金相试样制备+</td>
+                        <td name="facility">预磨机，抛光机，显微镜</td>
+                        <td class="center" name="quantityoffacility"></td>
+                        <td class="center" name="duration">60分钟</td>
+                        <td name="classroom">B405</td>
+                        <td name="bookings">25</td>
+                    </tr>
+                    <tr>
+                        <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
+                        <td name="experimentname">金相试样制备+</td>
+                        <td name="facility">预磨机，抛光机，显微镜</td>
+                        <td class="center" name="quantityoffacility"></td>
+                        <td class="center" name="duration">60分钟</td>
+                        <td name="classroom">B407</td>
+                        <td name="bookings">25</td>
+                    </tr>
+                    <tr>
+                        <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
+                        <td name="experimentname">二元合金相图</td>
+                        <td name="facility">可控温升炉</td>
+                        <td class="center" name="quantityoffacility">12</td>
+                        <td class="center" name="duration">45分钟</td>
+                        <td name="classroom">B411</td>
+                        <td name="bookings">30</td>
+                    </tr>
+                    <tr>
+                        <td name="coursename"><a href="experimentpage">材料热力学与物理化学</a></td>
+                        <td name="experimentname">原电池电动势</td>
+                        <td name="facility">原电池电动势测定装置</td>
+                        <td class="center" name="quantityoffacility">12</td>
+                        <td class="center" name="duration">45分钟</td>
+                        <td name="classroom">B411</td>
+                        <td name="bookings">25</td>
+                    </tr>
+                    <tr>
+                        <td name="coursename"><a href="experimentpage">材料热力学与物理化学</a></td>
+                        <td name="experimentname">燃烧热测定</td>
+                        <td name="facility">燃烧热测定装置</td>
+                        <td class="center" name="quantityoffacility">12</td>
+                        <td class="center" name="duration">60分钟</td>
+                        <td name="classroom">B411</td>
+                        <td name="bookings">25</td>
+                    </tr>
+                    <tr>
+                        <td name="coursename"><a href="experimentpage">材料热力学与物理化学</a></td>
+                        <td name="experimentname">乙酸乙酯的皂化</td>
+                        <td name="facility">水浴箱，电导率仪</td>
+                        <td class="center" name="quantityoffacility">12</td>
+                        <td class="center" name="duration">60分钟</td>
+                        <td name="classroom">B411</td>
+                        <td name="bookings">25</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </c:forEach>
 
             <br /><br />
 
