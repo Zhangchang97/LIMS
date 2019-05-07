@@ -110,7 +110,6 @@
             <div class="contenttitle2">
                 <h3>实验课程信息表</h3>
             </div><!--contenttitle-->
-            <c:forEach var="experimentinfodto"   items="${experimentinfo}"   varStatus="status">
                 <table cellpadding="0" cellspacing="0" border="0" class="stdtable">
                     <colgroup>
                         <col class="con0" />
@@ -144,6 +143,7 @@
                     </tr>
                     </tfoot>
                     <tbody>
+                    <c:forEach var="experimentinfodto"   items="${experimentinfo}"   varStatus="status">
                     <tr>
                         <td name="coursename"><a href="experimentpage">${experimentinfodto.coursename}</a></td>
                         <td name="experimentname">${experimentinfodto.experimentname}</td>
@@ -153,6 +153,7 @@
                         <td name="classroom">${experimentinfodto.classroom}</td>
                         <td name="bookings">${experimentinfodto.numberofbooking}</td>
                     </tr>
+                    </c:forEach>
                     <tr>
                         <td name="coursename"><a href="experimentpage">工程材料A</a></td>
                         <td name="experimentname">热处理及硬度</td>
@@ -263,7 +264,7 @@
                     </tr>
                     </tbody>
                 </table>
-            </c:forEach>
+
 
             <br /><br />
 

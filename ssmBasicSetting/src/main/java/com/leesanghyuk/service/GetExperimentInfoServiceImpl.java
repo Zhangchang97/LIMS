@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service("getexperimentinfoservice")
-public class GetExperimentInfoServiceImpl {
+public class GetExperimentInfoServiceImpl implements GetExperimentInfoService{
     @Autowired
     UserMapper usermapper;
 
