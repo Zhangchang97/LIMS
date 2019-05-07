@@ -50,7 +50,7 @@
 
     <div class="vernav2 iconmenu">
         <ul>
-            <li class="current"><a href="test" class="tables">预约信息表</a></li>
+            <li class="current"><a href="index" class="tables">预约信息表</a></li>
             <li><a href="#formsub" class="editor">预约</a>
                 <span class="arrow"></span>
                 <ul id="formsub">
@@ -66,22 +66,22 @@
             <%--<li><a href="asserts/typography.html" class="typo">Typography</a></li>--%>
             <%--<li><a href="asserts/buttons.html" class="buttons">Buttons &amp; Icons</a></li>--%>
             <%--<li><a href="#error" class="error">Error Pages</a>--%>
-                <%--<span class="arrow"></span>--%>
-                <%--<ul id="error">--%>
-                    <%--<li><a href="asserts/notfound.html">Page Not Found</a></li>--%>
-                    <%--<li><a href="asserts/forbidden.html">Forbidden Page</a></li>--%>
-                    <%--<li><a href="asserts/internal.html">Internal Server Error</a></li>--%>
-                    <%--<li><a href="asserts/offline.html">Offline</a></li>--%>
-                <%--</ul>--%>
+            <%--<span class="arrow"></span>--%>
+            <%--<ul id="error">--%>
+            <%--<li><a href="asserts/notfound.html">Page Not Found</a></li>--%>
+            <%--<li><a href="asserts/forbidden.html">Forbidden Page</a></li>--%>
+            <%--<li><a href="asserts/internal.html">Internal Server Error</a></li>--%>
+            <%--<li><a href="asserts/offline.html">Offline</a></li>--%>
+            <%--</ul>--%>
             <%--</li>--%>
             <%--<li><a href="#addons" class="addons">Addons</a>--%>
-                <%--<span class="arrow"></span>--%>
-                <%--<ul id="addons">--%>
-                    <%--<li><a href="asserts/newsfeed.html">News Feed</a></li>--%>
-                    <%--<li><a href="asserts/profile.html">Profile Page</a></li>--%>
-                    <%--<li><a href="asserts/productlist.html">Product List</a></li>--%>
-                    <%--<li><a href="asserts/photo.html">Photo/Video Sharing</a></li>--%>
-                <%--</ul>--%>
+            <%--<span class="arrow"></span>--%>
+            <%--<ul id="addons">--%>
+            <%--<li><a href="asserts/newsfeed.html">News Feed</a></li>--%>
+            <%--<li><a href="asserts/profile.html">Profile Page</a></li>--%>
+            <%--<li><a href="asserts/productlist.html">Product List</a></li>--%>
+            <%--<li><a href="asserts/photo.html">Photo/Video Sharing</a></li>--%>
+            <%--</ul>--%>
             <%--</li>--%>
         </ul>
         <a class="togglemenu"></a>
@@ -102,11 +102,11 @@
 
         <div id="contentwrapper" class="contentwrapper">
 
-        <div id="experimentform" class="subcontent">
+            <div id="experimentform" class="subcontent">
 
-            <div class="contenttitle2">
-                <h3>实验课程信息表</h3>
-            </div><!--contenttitle-->
+                <div class="contenttitle2">
+                    <h3>实验课程信息表</h3>
+                </div><!--contenttitle-->
                 <table cellpadding="0" cellspacing="0" border="0" class="stdtable">
                     <colgroup>
                         <col class="con0" />
@@ -153,110 +153,62 @@
                     </c:forEach>
                     </tbody>
                 </table>
-        </div>
+            </div>
 
             <br /><br />
 
             <div id="facilityform" class="subcontent">
 
-            <div class="contenttitle2">
-                <h3>实验仪器信息表</h3>
-            </div><!--contenttitle-->
+                <div class="contenttitle2">
+                    <h3>实验仪器信息表</h3>
+                </div><!--contenttitle-->
 
-            <table cellpadding="0" cellspacing="0" border="0" class="stdtable stdtablequick">
-                <colgroup>
-                    <col class="con0" />
-                    <col class="con1" />
-                    <col class="con0" />
-                    <col class="con1" />
-                    <col class="con0" />
-                    <col class="con1" />
-                </colgroup>
-                <thead>
-                <tr>
-                    <th class="head0">仪器名称</th>
-                    <th class="head1">仪器级别</th>
-                    <th class="head0">可预约仪器数量</th>
-                    <th class="head1">仪器名称</th>
-                    <th class="head0">仪器级别</th>
-                    <th class="head1">可预约仪器数量</th>
-                </tr>
-                </thead>
-                <tfoot>
-                <tr>
-                    <th class="head0">仪器名称</th>
-                    <th class="head1">仪器级别</th>
-                    <th class="head0">仪器数量</th>
-                    <th class="head1">仪器名称</th>
-                    <th class="head0">仪器级别</th>
-                    <th class="head1">仪器数量</th>
-                </tr>
-                </tfoot>
-                <tbody>
-                <c:forEach var="f" items="${facilityinfo}" varStatus="Status">
-                    <c:if test="Status.index%2==1">
-                        <tr>
+                <table cellpadding="0" cellspacing="0" border="0" class="stdtable stdtablequick">
+                    <colgroup>
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th class="head0">仪器名称</th>
+                        <th class="head1">仪器级别</th>
+                        <th class="head0">可预约仪器数量</th>
+                        <th class="head1">仪器名称</th>
+                        <th class="head0">仪器级别</th>
+                        <th class="head1">可预约仪器数量</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th class="head0">仪器名称</th>
+                        <th class="head1">仪器级别</th>
+                        <th class="head0">仪器数量</th>
+                        <th class="head1">仪器名称</th>
+                        <th class="head0">仪器级别</th>
+                        <th class="head1">仪器数量</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    <c:forEach var="f" items="${facilityinfo}" varStatus="Status">
+                        <c:if test="${Status.index%2==1}">
+                            <tr>
                             <td name="facility">${f.name}</td>
                             <td name="level">${f.level}</td>
                             <td name="booking">${f.booking}</td>
-                    </c:if>
-                    <c:if test="Status.index%2==0">
+                        </c:if>
+                        <c:if test="${Status.index%2==0}">
                             <td class="center" name="facility">${f.name}</td>
                             <td class="center" name="level">${f.level}</td>
                             <td class="center" name="booking">${f.booking}</td>
-                        </tr>
-                    </c:if>
-                </c:forEach>
-                <%--<tr>--%>
-                    <%--<td>吹风机</td>--%>
-                    <%--<td>一般仪器</td>--%>
-                    <%--<td>1</td>--%>
-                    <%--<td class="center">水浴箱</td>--%>
-                    <%--<td class="center">一般仪器</td>--%>
-                    <%--<td class="center">10</td>--%>
-                <%--</tr>--%>
-                <%--<tr>--%>
-                    <%--<td>箱式电阻炉</td>--%>
-                    <%--<td>危险仪器</td>--%>
-                    <%--<td>3</td>--%>
-                    <%--<td class="center">抛光机</td>--%>
-                    <%--<td class="center">危险仪器</td>--%>
-                    <%--<td class="center">6</td>--%>
-                <%--</tr>--%>
-                <%--<tr>--%>
-                    <%--<td>预磨机</td>--%>
-                    <%--<td>危险仪器</td>--%>
-                    <%--<td>2</td>--%>
-                    <%--<td class="center">砂轮</td>--%>
-                    <%--<td class="center">危险仪器</td>--%>
-                    <%--<td class="center">1</td>--%>
-                <%--</tr>--%>
-                <%--<tr>--%>
-                    <%--<td>燃烧热实验装置</td>--%>
-                    <%--<td>危险仪器</td>--%>
-                    <%--<td>12</td>--%>
-                    <%--<td class="center">可控温电炉</td>--%>
-                    <%--<td class="center">危险仪器</td>--%>
-                    <%--<td class="center">10</td>--%>
-                <%--</tr>--%>
-                <%--<tr>--%>
-                    <%--<td>显微维式硬度计</td>--%>
-                    <%--<td>精密仪器</td>--%>
-                    <%--<td>1</td>--%>
-                    <%--<td class="center">显微镜（带成像系统）</td>--%>
-                    <%--<td class="center">精密仪器</td>--%>
-                    <%--<td class="center">1</td>--%>
-                <%--</tr>--%>
-                <%--<tr>--%>
-                    <%--<td>光学显微镜</td>--%>
-                    <%--<td>精密仪器</td>--%>
-                    <%--<td>27</td>--%>
-                    <%--<td class="center"></td>--%>
-                    <%--<td class="center"></td>--%>
-                    <%--<td class="center"></td>--%>
-                <%--</tr>--%>
-                </tbody>
-            </table>
+                            </tr>
+                        </c:if>
+                    </c:forEach>
+                    </tbody>
+                </table>
             </div>
 
             <br /><br />
@@ -271,5 +223,4 @@
 
 </body>
 </html>
-
 
