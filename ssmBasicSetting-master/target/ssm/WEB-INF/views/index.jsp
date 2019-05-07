@@ -1,13 +1,6 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: 10641
-  Date: 2019/3/26
-  Time: 17:25
-  To change this template use File | Settings | File Templates.
---%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" pageEncoding="utf-8"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -97,15 +90,19 @@
 
     <div class="centercontent tables">
 
-        <div class="pageheader notab">
+        <div class="pageheader">
             <h1 class="pagetitle">预约信息</h1>
-            <span class="pagedesc">当前可预约的实验课程和实验仪器信息</span>
+            <span class="pagedesc">当前可预约的实验课程信息和实验仪器信息</span>
 
+            <ul class="hornav">
+                <li class="current"><a href="#experimentform">实验课程</a></li>
+                <li><a href="#facilityform">实验仪器</a></li>
+            </ul>
         </div><!--pageheader-->
 
         <div id="contentwrapper" class="contentwrapper">
 
-
+        <div id="experimentform" class="subcontent">
 
             <div class="contenttitle2">
                 <h3>实验课程信息表</h3>
@@ -143,130 +140,24 @@
                     </tr>
                     </tfoot>
                     <tbody>
-                    <c:forEach var="experimentinfodto"   items="${experimentinfo}"   varStatus="status">
-                    <tr>
-                        <td name="coursename"><a href="experimentpage">${experimentinfodto.coursename}</a></td>
-                        <td name="experimentname">${experimentinfodto.experimentname}</td>
-                        <td name="facility">${experimentinfodto.facility}</td>
-                        <td class="center" name="quantityoffacility">${experimentinfodto.quantityoffacility}</td>
-                        <td class="center" name="duration">${experimentinfodto.duration}</td>
-                        <td name="classroom">${experimentinfodto.classroom}</td>
-                        <td name="bookings">${experimentinfodto.numberofbooking}</td>
-                    </tr>
+                    <c:forEach var="e"   items="${experimentinfo}"   varStatus="status">
+                        <tr>
+                            <td name="coursename">${e.coursename}</td>
+                            <td name="experimentname">${e.experimentname}</td>
+                            <td name="facility">${e.facility}</td>
+                            <td class="center" name="quantityoffacility">${e.quantityoffacility}</td>
+                            <td class="center" name="duration">${e.duration}</td>
+                            <td name="classroom">${e.classroom}</td>
+                            <td name="bookings">${e.numberofbooking}</td>
+                        </tr>
                     </c:forEach>
-                    <tr>
-                        <td name="coursename"><a href="experimentpage">工程材料A</a></td>
-                        <td name="experimentname">热处理及硬度</td>
-                        <td name="facility">电阻炉，预磨机，硬度计</td>
-                        <td class="center" name="quantityoffacility">3,2,2</td>
-                        <td class="center" name="duration">60分钟</td>
-                        <td name="classroom">B407</td>
-                        <td name="bookings">20</td>
-                    </tr>
-                    <tr>
-                        <td name="coursename"><a href="experimentpage">工程材料A</a></td>
-                        <td name="experimentname">热处理及硬度</td>
-                        <td name="facility">电阻炉，预磨机，硬度计</td>
-                        <td class="center" name="quantityoffacility">3,2,2</td>
-                        <td class="center" name="duration">60分钟</td>
-                        <td name="classroom">B409</td>
-                        <td name="bookings">20</td>
-                    </tr>
-                    <tr>
-                        <td name="coursename"><a href="experimentpage">工程材料B</a></td>
-                        <td name="experimentname">铁碳平衡组织观察分析</td>
-                        <td name="facility">金相显微镜 4*1</td>
-                        <td class="center" name="quantityoffacility">27</td>
-                        <td class="center" name="duration">60分钟</td>
-                        <td name="classroom">B405</td>
-                        <td name="bookings">35</td>
-                    </tr>
-                    <tr>
-                        <td name="coursename"><a href="experimentpage">工程材料B</a></td>
-                        <td name="experimentname">热处理及硬度</td>
-                        <td name="facility">电阻炉，预磨机，硬度计</td>
-                        <td class="center" name="quantityoffacility">3，2，2</td>
-                        <td class="center" name="duration">60分钟</td>
-                        <td name="classroom">B407</td>
-                        <td name="bookings">20</td>
-                    </tr>
-                    <tr>
-                        <td name="coursename"><a href="experimentpage">工程材料B</a></td>
-                        <td name="experimentname">热处理及硬度</td>
-                        <td name="facility">电阻炉，预磨机，硬度计</td>
-                        <td class="center" name="quantityoffacility">3，2，2</td>
-                        <td class="center" name="duration">60分钟</td>
-                        <td name="classroom">B409</td>
-                        <td name="bookings">20</td>
-                    </tr>
-                    <tr>
-                        <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
-                        <td name="experimentname">平衡组织观察分析</td>
-                        <td name="facility">金相显微镜 4*1</td>
-                        <td class="center" name="quantityoffacility">27</td>
-                        <td class="center" name="duration">60分钟</td>
-                        <td name="classroom">B405</td>
-                        <td name="bookings">35</td>
-                    </tr>
-                    <tr>
-                        <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
-                        <td name="experimentname">金相试样制备+</td>
-                        <td name="facility">预磨机，抛光机，显微镜</td>
-                        <td class="center" name="quantityoffacility"></td>
-                        <td class="center" name="duration">60分钟</td>
-                        <td name="classroom">B405</td>
-                        <td name="bookings">25</td>
-                    </tr>
-                    <tr>
-                        <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
-                        <td name="experimentname">金相试样制备+</td>
-                        <td name="facility">预磨机，抛光机，显微镜</td>
-                        <td class="center" name="quantityoffacility"></td>
-                        <td class="center" name="duration">60分钟</td>
-                        <td name="classroom">B407</td>
-                        <td name="bookings">25</td>
-                    </tr>
-                    <tr>
-                        <td name="coursename"><a href="experimentpage">材料科学基础</a></td>
-                        <td name="experimentname">二元合金相图</td>
-                        <td name="facility">可控温升炉</td>
-                        <td class="center" name="quantityoffacility">12</td>
-                        <td class="center" name="duration">45分钟</td>
-                        <td name="classroom">B411</td>
-                        <td name="bookings">30</td>
-                    </tr>
-                    <tr>
-                        <td name="coursename"><a href="experimentpage">材料热力学与物理化学</a></td>
-                        <td name="experimentname">原电池电动势</td>
-                        <td name="facility">原电池电动势测定装置</td>
-                        <td class="center" name="quantityoffacility">12</td>
-                        <td class="center" name="duration">45分钟</td>
-                        <td name="classroom">B411</td>
-                        <td name="bookings">25</td>
-                    </tr>
-                    <tr>
-                        <td name="coursename"><a href="experimentpage">材料热力学与物理化学</a></td>
-                        <td name="experimentname">燃烧热测定</td>
-                        <td name="facility">燃烧热测定装置</td>
-                        <td class="center" name="quantityoffacility">12</td>
-                        <td class="center" name="duration">60分钟</td>
-                        <td name="classroom">B411</td>
-                        <td name="bookings">25</td>
-                    </tr>
-                    <tr>
-                        <td name="coursename"><a href="experimentpage">材料热力学与物理化学</a></td>
-                        <td name="experimentname">乙酸乙酯的皂化</td>
-                        <td name="facility">水浴箱，电导率仪</td>
-                        <td class="center" name="quantityoffacility">12</td>
-                        <td class="center" name="duration">60分钟</td>
-                        <td name="classroom">B411</td>
-                        <td name="bookings">25</td>
-                    </tr>
                     </tbody>
                 </table>
-
+        </div>
 
             <br /><br />
+
+            <div id="facilityform" class="subcontent">
 
             <div class="contenttitle2">
                 <h3>实验仪器信息表</h3>
@@ -302,64 +193,71 @@
                 </tr>
                 </tfoot>
                 <tbody>
-                <tr>
-                    <td>超声波清洗仪</td>
-                    <td>一般仪器</td>
-                    <td>1</td>
-                    <td class="center">天平</td>
-                    <td class="center">一般仪器</td>
-                    <td class="center">2</td>
-                </tr>
-                <tr>
-                    <td>吹风机</td>
-                    <td>一般仪器</td>
-                    <td>1</td>
-                    <td class="center">水浴箱</td>
-                    <td class="center">一般仪器</td>
-                    <td class="center">10</td>
-                </tr>
-                <tr>
-                    <td>箱式电阻炉</td>
-                    <td>危险仪器</td>
-                    <td>3</td>
-                    <td class="center">抛光机</td>
-                    <td class="center">危险仪器</td>
-                    <td class="center">6</td>
-                </tr>
-                <tr>
-                    <td>预磨机</td>
-                    <td>危险仪器</td>
-                    <td>2</td>
-                    <td class="center">砂轮</td>
-                    <td class="center">危险仪器</td>
-                    <td class="center">1</td>
-                </tr>
-                <tr>
-                    <td>燃烧热实验装置</td>
-                    <td>危险仪器</td>
-                    <td>12</td>
-                    <td class="center">可控温电炉</td>
-                    <td class="center">危险仪器</td>
-                    <td class="center">10</td>
-                </tr>
-                <tr>
-                    <td>显微维式硬度计</td>
-                    <td>精密仪器</td>
-                    <td>1</td>
-                    <td class="center">显微镜（带成像系统）</td>
-                    <td class="center">精密仪器</td>
-                    <td class="center">1</td>
-                </tr>
-                <tr>
-                    <td>光学显微镜</td>
-                    <td>精密仪器</td>
-                    <td>27</td>
-                    <td class="center"></td>
-                    <td class="center"></td>
-                    <td class="center"></td>
-                </tr>
+                <c:forEach var="f" items="${facilityinfo}" varStatus="Status">
+                    <c:if test="Status.index%2==1">
+                        <tr>
+                            <td name="facility">${f.name}</td>
+                            <td name="level">${f.level}</td>
+                            <td name="booking">${f.booking}</td>
+                    </c:if>
+                    <c:if test="Status.index%2==0">
+                            <td class="center" name="facility">${f.name}</td>
+                            <td class="center" name="level">${f.level}</td>
+                            <td class="center" name="booking">${f.booking}</td>
+                        </tr>
+                    </c:if>
+                </c:forEach>
+                <%--<tr>--%>
+                    <%--<td>吹风机</td>--%>
+                    <%--<td>一般仪器</td>--%>
+                    <%--<td>1</td>--%>
+                    <%--<td class="center">水浴箱</td>--%>
+                    <%--<td class="center">一般仪器</td>--%>
+                    <%--<td class="center">10</td>--%>
+                <%--</tr>--%>
+                <%--<tr>--%>
+                    <%--<td>箱式电阻炉</td>--%>
+                    <%--<td>危险仪器</td>--%>
+                    <%--<td>3</td>--%>
+                    <%--<td class="center">抛光机</td>--%>
+                    <%--<td class="center">危险仪器</td>--%>
+                    <%--<td class="center">6</td>--%>
+                <%--</tr>--%>
+                <%--<tr>--%>
+                    <%--<td>预磨机</td>--%>
+                    <%--<td>危险仪器</td>--%>
+                    <%--<td>2</td>--%>
+                    <%--<td class="center">砂轮</td>--%>
+                    <%--<td class="center">危险仪器</td>--%>
+                    <%--<td class="center">1</td>--%>
+                <%--</tr>--%>
+                <%--<tr>--%>
+                    <%--<td>燃烧热实验装置</td>--%>
+                    <%--<td>危险仪器</td>--%>
+                    <%--<td>12</td>--%>
+                    <%--<td class="center">可控温电炉</td>--%>
+                    <%--<td class="center">危险仪器</td>--%>
+                    <%--<td class="center">10</td>--%>
+                <%--</tr>--%>
+                <%--<tr>--%>
+                    <%--<td>显微维式硬度计</td>--%>
+                    <%--<td>精密仪器</td>--%>
+                    <%--<td>1</td>--%>
+                    <%--<td class="center">显微镜（带成像系统）</td>--%>
+                    <%--<td class="center">精密仪器</td>--%>
+                    <%--<td class="center">1</td>--%>
+                <%--</tr>--%>
+                <%--<tr>--%>
+                    <%--<td>光学显微镜</td>--%>
+                    <%--<td>精密仪器</td>--%>
+                    <%--<td>27</td>--%>
+                    <%--<td class="center"></td>--%>
+                    <%--<td class="center"></td>--%>
+                    <%--<td class="center"></td>--%>
+                <%--</tr>--%>
                 </tbody>
             </table>
+            </div>
 
             <br /><br />
 

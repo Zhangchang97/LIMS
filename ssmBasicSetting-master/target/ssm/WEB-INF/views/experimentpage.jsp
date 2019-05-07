@@ -71,32 +71,6 @@
                 </ul>
             </li>
             <li><a href="recordpage" class="elements">记录</a></li>
-            <%--<li><a href="asserts/filemanager.html" class="gallery">File Manager</a></li>--%>
-            <%--<li><a href="asserts/widgets.html" class="widgets">Widgets</a></li>--%>
-            <%--<li><a href="asserts/calendar.html" class="calendar">Calendar</a></li>--%>
-            <%--<li><a href="asserts/support.html" class="support">Customer Support</a></li>--%>
-            <%--<li><a href="asserts/typography.html" class="typo">Typography</a></li>--%>
-            <%--<li><a href="asserts/buttons.html" class="buttons">Buttons &amp; Icons</a></li>--%>
-            <%--<li><a href="#error" class="error">Error Pages</a>--%>
-                <%--<span class="arrow"></span>--%>
-                <%--<ul id="error">--%>
-                    <%--<li><a href="asserts/notfound.html">Page Not Found</a></li>--%>
-                    <%--<li><a href="asserts/forbidden.html">Forbidden Page</a></li>--%>
-                    <%--<li><a href="asserts/internal.html">Internal Server Error</a></li>--%>
-                    <%--<li><a href="asserts/offline.html">Offline</a></li>--%>
-                <%--</ul>--%>
-            <%--</li>--%>
-            <%--<li><a href="#addons" class="addons">Addons</a>--%>
-                <%--<span class="arrow"></span>--%>
-                <%--<ul id="addons">--%>
-                    <%--<li><a href="asserts/newsfeed.html">News Feed</a></li>--%>
-                    <%--<li><a href="asserts/profile.html">Profile Page</a></li>--%>
-                    <%--<li><a href="asserts/productlist.html">Product List</a></li>--%>
-                    <%--<li><a href="asserts/photo.html">Photo/Video Sharing</a></li>--%>
-                    <%--<li><a href="asserts/gallery.html">Gallery</a></li>--%>
-                    <%--<li><a href="asserts/invoice.html">Invoice</a></li>--%>
-                <%--</ul>--%>
-            <%--</li>--%>
         </ul>
         <a class="togglemenu"></a>
         <br /><br />

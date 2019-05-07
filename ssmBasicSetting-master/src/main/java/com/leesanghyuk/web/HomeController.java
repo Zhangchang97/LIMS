@@ -3,8 +3,10 @@ package com.leesanghyuk.web;
 
 import com.leesanghyuk.mapper.UserMapper;
 import com.leesanghyuk.model.ExperimentInfoDTO;
+import com.leesanghyuk.model.FacilityInfoDTO;
 import com.leesanghyuk.model.UserLoginDTO;
 import com.leesanghyuk.service.GetExperimentInfoService;
+import com.leesanghyuk.service.GetFacilityInfoService;
 import com.leesanghyuk.service.UserLoginService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +34,9 @@ public class HomeController {
 
     @Autowired
     GetExperimentInfoService getexperimentinfoservice;
+
+    @Autowired
+    GetFacilityInfoService getfacilityinfoservice;
 
     @RequestMapping()
     public String Login(HttpServletRequest request){
@@ -65,10 +70,19 @@ public class HomeController {
 
     @RequestMapping("/index")
     public String index(Model model) {
+        //取出实验课程数据填入表格中
         List<ExperimentInfoDTO> experimentInfoDTOList = getexperimentinfoservice.getExperimentInfo();
         logger.debug("已经将数据取到experimenInfoDTOList中");
         model.addAttribute("experimentinfo",experimentInfoDTOList);
-        System.out.println(experimentInfoDTOList.size());
+        System.out.println(experimentInfoDTOList.size()+"已经将实验课程数据取出来了!!!");
+
+        //取出实验仪器数据填入表格中
+        List<FacilityInfoDTO> facilityInfoDTOList = getfacilityinfoservice.getFacilityInfo();
+        model.addAttribute("facilityinfo",facilityInfoDTOList);
+        for (int i = 0; i < 5; i++){
+        System.out.println("已经将实验仪器数据取出来了!!!"+facilityInfoDTOList.get(i).getName());
+        System.out.println(facilityInfoDTOList.get(i).getLevel());
+        }
         return "index";
     }
 

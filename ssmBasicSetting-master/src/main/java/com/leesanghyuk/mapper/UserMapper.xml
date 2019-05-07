@@ -13,4 +13,8 @@
     <select id="getExperimentInfo"  resultType="ExperimentInfoDTO">
         SELECT * FROM experimentinfo
     </select>
+
+    <select id="getFacilityInfo"  resultType="FacilityInfoDTO">
+        SELECT * FROM facilityinfo
+    </select>
 </mapper>
