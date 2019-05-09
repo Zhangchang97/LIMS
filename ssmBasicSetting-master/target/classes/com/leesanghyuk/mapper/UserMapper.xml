@@ -17,4 +17,15 @@
     <select id="getFacilityInfo"  resultType="FacilityInfoDTO">
         SELECT * FROM facilityinfo
     </select>
+
+    <select id="getExperimentInfoByID" parameterType="int"  resultType="ExperimentInfoDTO">
+        SELECT * FROM experimentinfo WHERE id=#{id}
+    </select>
+    
+    <update id="updateExperimentInfo" parameterType="ExperimentInfoDTO">
+        UPDATE experimentinfo
+        SET coursename=#{coursename},experimentname=#{experimentname},facility=#{facility},quantityoffacility=#{quantityoffacility},
+        duration=#{duration},classroom=#{classroom},totalbooking=#{totalbooking}
+        WHERE id=#{id}
+    </update>
 </mapper>

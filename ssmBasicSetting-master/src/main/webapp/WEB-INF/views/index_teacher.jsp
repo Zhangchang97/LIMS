@@ -50,12 +50,12 @@
 
     <div class="vernav2 iconmenu">
         <ul>
-            <li class="current"><a href="test" class="tables">预约信息表</a></li>
-            <li><a href="#formsub" class="editor">预约</a>
+            <li class="current"><a href="index_teacher" class="tables">预约信息表</a></li>
+            <li><a href="#formsub" class="editor">操作</a>
                 <span class="arrow"></span>
                 <ul id="formsub">
-                    <li><a href="experimentpage">实验课程预约</a></li>
-                    <li><a href="instrumentpage">实验仪器预约</a></li>
+                    <li><a href="updateexperiment">实验课程更新</a></li>
+                    <li><a href="updatefacility">实验仪器更新</a></li>
                 </ul>
             </li>
             <li><a href="recordpage" class="elements">记录</a></li>
@@ -135,6 +135,7 @@
                     </tbody>
                 </table>
             </div>
+
 
             <br /><br />
 

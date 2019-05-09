@@ -100,7 +100,7 @@
             </ul>
         </div><!--pageheader-->
 
-        <div id="contentwrapper" class="contentwrapper">
+        <div id="contentwrapper" class="contentwrapper" action="/index">
 
             <div id="experimentform" class="subcontent">
 
