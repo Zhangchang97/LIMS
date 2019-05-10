@@ -28,4 +28,42 @@
         duration=#{duration},classroom=#{classroom},totalbooking=#{totalbooking}
         WHERE id=#{id}
     </update>
+
+    <delete id="deleteExperiment" parameterType="int">
+        DELETE FROM experimentinfo WHERE id=#{id}
+    </delete>
+
+    <select id="getFacilityInfoByID" parameterType="int" resultType="FacilityInfoDTO">
+        SELECT * FROM facilityinfo WHERE id=#{id}
+    </select>
+
+    <update id="updateFacilityInfo" parameterType="FacilityInfoDTO">
+        UPDATE facilityinfo
+        SET name=#{name},level=#{level},totalbooking=#{totalbooking}
+        WHERE id=#{id}
+    </update>
+
+    <delete id="deleteFacility" parameterType="int">
+        DELETE FROM facilityinfo WHERE id=#{id}
+    </delete>
+
+    <insert id="addExperiment" parameterType="ExperimentInfoDTO" useGeneratedKeys="true">
+        INSERT INTO experimentinfo(coursename,experimentname,facility,quantityoffacility,duration,classroom,bookings,totalbooking)
+        VALUES (#{coursename},#{experimentname},#{facility},#{quantityoffacility},#{duration},#{classroom},#{totalbooking},#{totalbooking})
+    </insert>
+
+    <insert id="addFacility" parameterType="FacilityInfoDTO" useGeneratedKeys="true">
+        INSERT INTO facilityinfo(name,level,booking,totalbooking)
+        VALUES (#{name},#{level},#{totalbooking},#{totalbooking})
+    </insert>
+
+    <select id="getbookings" parameterType="ExperimentInfoDTO" resultType="int">
+        SELECT bookings FROM experimentinfo WHERE experimentname=#{experimentname} and classroom=#{classroom}
+    </select>
+
+    <update id="updatebookings" parameterType="ExperimentInfoDTO">
+        UPDATE experimentinfo
+        SET bookings=#{bookings}
+        WHERE experimentname=#{experimentname} and classroom = #{classroom}
+    </update>
 </mapper>

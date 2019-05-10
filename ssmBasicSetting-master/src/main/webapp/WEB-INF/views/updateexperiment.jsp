@@ -63,11 +63,11 @@
     <div class="vernav2 iconmenu">
         <ul>
             <li><a href="index_teacher" class="tables">预约信息表</a></li>
-            <li class="current"><a href="#formsub" class="editor">操作</a>
+            <li><a href="#formsub" class="editor">添加课程或仪器</a>
                 <span class="arrow"></span>
                 <ul id="formsub">
-                    <li class="current"><a href="updateexperiment">实验课程更新</a></li>
-                    <li><a href="updatefacility">实验仪器更新</a></li>
+                    <li><a href="addexperiment">新增实验课程</a></li>
+                    <li><a href="addfacility">新增实验仪器</a></li>
                 </ul>
             </li>
             <li><a href="recordpage" class="elements">记录</a></li>
@@ -91,7 +91,7 @@
                     <h3>实验室课程预约</h3>
                 </div><!--contenttitle-->
 
-                <form class="stdform" action="/updateexperiment_update" method="post">
+                <form class="stdform" action="/updateexperiment_update" method="post" accept-charset="UTF-8">
                     <p>
                         <label>课程名称</label>
                         <span class="field">
@@ -145,67 +145,7 @@
                         <small class="desc">如：35</small>
                     </p>
 
-
-                    <br clear="all" /><br />
-
-                    <p class="stdformbutton">
-                        <button class="submit radius2">提交</button>
-                        <input type="reset" class="reset radius2" value="撤销" />
-                    </p>
-
-                </form>
-
-            </div><!--subcontent-->
-
-            <div id="validation" class="subcontent" style="display: none">
-
-                <div class="contenttitle2">
-                    <h3>实验室课程预约</h3>
-                </div><!--contenttitle-->
-
-                <form id="form1" class="stdform" method="post" action="">
-
-                    <p>
-                        <label>实验名称</label>
-                        <span class="field">
-                            <select name="select" class="uniformselect">
-                            	<option value="">铁碳平衡组织观察分析</option>
-                                <option value="">热处理及硬度（工程材料A）</option>
-                                <option value="">非平衡组织观察分析</option>
-                                <option value="">热处理及硬度（工程材料B）</option>
-                                <option value="">平衡组织观察分析</option>
-                                <option value="">金相试样制备+</option>
-                                <option value="">二元合金相图</option>
-                                <option value="">原电池电动势</option>
-                                <option value="">燃烧热测定</option>
-                                <option value="">乙酸乙酯的皂化</option>
-                            </select>
-                        </span>
-                    </p>
-
-                    <p>
-                        <label>教室选择</label>
-                        <span class="field">
-                            <select name="select" class="uniformselect">
-                            	<option value="">B405</option>
-                                <option value="">B407</option>
-                                <option value="">B409</option>
-                                <option value="">B411</option>
-                            </select>
-                        </span>
-                    </p>
-
-                    <p>
-                        <label>时间选择</label>
-                        <span class="field">
-                            <select name="select" class="uniformselect">
-                            	<option value="">8:00-9:35</option>
-                                <option value="">9:50-11:25</option>
-                                <option value="">2:00-3:35</option>
-                                <option value="">3:55-5:35</option>
-                            </select>
-                        </span>
-                    </p>
+                    <input type="text" name="id" value="${experimentinfo.id}" style="visibility: hidden"/>
 
 
                     <br clear="all" /><br />
@@ -214,8 +154,6 @@
                         <button class="submit radius2">提交</button>
                         <input type="reset" class="reset radius2" value="撤销" />
                     </p>
-
-                    <br />
 
                 </form>
 

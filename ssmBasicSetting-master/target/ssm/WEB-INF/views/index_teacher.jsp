@@ -51,11 +51,11 @@
     <div class="vernav2 iconmenu">
         <ul>
             <li class="current"><a href="index_teacher" class="tables">预约信息表</a></li>
-            <li><a href="#formsub" class="editor">操作</a>
+            <li><a href="#formsub" class="editor">添加课程或仪器</a>
                 <span class="arrow"></span>
                 <ul id="formsub">
-                    <li><a href="updateexperiment">实验课程更新</a></li>
-                    <li><a href="updatefacility">实验仪器更新</a></li>
+                    <li><a href="addexperiment">新增实验课程</a></li>
+                    <li><a href="addfacility">新增实验仪器</a></li>
                 </ul>
             </li>
             <li><a href="recordpage" class="elements">记录</a></li>
@@ -94,6 +94,7 @@
                         <col class="con1" />
                         <col class="con0" />
                         <col class="con1" />
+                        <col class="con0" />
                     </colgroup>
                     <thead>
                     <tr>
@@ -104,6 +105,7 @@
                         <th class="head0">时长</th>
                         <th class="head1">可用教室</th>
                         <th class="head0">可预约人数</th>
+                        <th class="head1">实验总人数</th>
                         <th class="head1">操作</th>
                     </tr>
                     </thead>
@@ -116,7 +118,8 @@
                         <th class="head0">时长</th>
                         <th class="head1">可用教室</th>
                         <th class="head0">可预约人数</th>
-                        <th class="head1">操作</th>
+                        <th class="head1">实验总人数</th>
+                        <th class="head0">操作</th>
                     </tr>
                     </tfoot>
                     <tbody>
@@ -128,8 +131,9 @@
                             <td class="center" name="quantityoffacility">${e.quantityoffacility}</td>
                             <td class="center" name="duration">${e.duration}</td>
                             <td name="classroom">${e.classroom}</td>
-                            <td name="bookings">${e.numberofbooking}</td>
-                            <td><a href="/updateexperiment?id=${e.id}">更新</a>  <a href="/deleteexperiment">删除</a></td>
+                            <td name="bookings">${e.bookings}</td>
+                            <td name="totalbooking">${e.totalbooking}</td>
+                            <td><a href="/updateexperiment?id=${e.id}">更新</a>  <a href="/deleteexperiment?id=${e.id}">删除</a></td>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -155,17 +159,21 @@
                         <col class="con1" />
                         <col class="con0" />
                         <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
                     </colgroup>
                     <thead>
                     <tr>
                         <th class="head0">仪器名称</th>
                         <th class="head1">仪器级别</th>
                         <th class="head0">可预约仪器数量</th>
-                        <th class="head1">操作</th>
-                        <th class="head0">仪器名称</th>
-                        <th class="head1">仪器级别</th>
-                        <th class="head0">可预约仪器数量</th>
-                        <th class="head1">操作</th>
+                        <th class="head1">总仪器数量</th>
+                        <th class="head0">操作</th>
+                        <th class="head1">仪器名称</th>
+                        <th class="head0">仪器级别</th>
+                        <th class="head1">可预约仪器数量</th>
+                        <th class="head1">总仪器数量</th>
+                        <th class="head0">操作</th>
                     </tr>
                     </thead>
                     <tfoot>
@@ -173,11 +181,14 @@
                         <th class="head0">仪器名称</th>
                         <th class="head1">仪器级别</th>
                         <th class="head0">可预约仪器数量</th>
-                        <th class="head1">操作</th>
-                        <th class="head0">仪器名称</th>
-                        <th class="head1">仪器级别</th>
-                        <th class="head0">可预约仪器数量</th>
-                        <th class="head1">操作</th>
+                        <th class="head1">总仪器数量</th>
+                        <th class="head0">操作</th>
+                        <th class="head1">仪器名称</th>
+                        <th class="head0">仪器级别</th>
+                        <th class="head1">可预约仪器数量</th>
+                        <th class="head1">总仪器数量</th>
+                        <th class="head0">操作</th>
+                    </tr>
                     </tfoot>
                     <tbody>
                     <c:forEach var="f" items="${facilityinfo}" varStatus="Status">
@@ -186,12 +197,14 @@
                             <td name="facility">${f.name}</td>
                             <td name="level">${f.level}</td>
                             <td name="booking">${f.booking}</td>
+                            <td name="totalbooking">${f.totalbooking}</td>
                             <td><a href="/updatefacility?id=${f.id}">更新</a>  <a href="/deletefacility?id=${f.id}">删除</a></td>
                         </c:if>
                         <c:if test="${Status.index%2==0}">
                             <td class="center" name="facility">${f.name}</td>
                             <td class="center" name="level">${f.level}</td>
                             <td class="center" name="booking">${f.booking}</td>
+                            <td class="center" name="totalbooking">${f.totalbooking}</td>
                             <td><a href="/updatefacility?id=${f.id}">更新</a>  <a href="/deletefacility?id=${f.id}">删除</a></td>
                             </tr>
                         </c:if>

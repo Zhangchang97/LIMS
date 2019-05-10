@@ -148,7 +148,7 @@
                             <td class="center" name="quantityoffacility">${e.quantityoffacility}</td>
                             <td class="center" name="duration">${e.duration}</td>
                             <td name="classroom">${e.classroom}</td>
-                            <td name="bookings">${e.numberofbooking}</td>
+                            <td name="bookings">${e.bookings}</td>
                         </tr>
                     </c:forEach>
                     </tbody>

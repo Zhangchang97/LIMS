@@ -4,10 +4,7 @@ package com.leesanghyuk.web;
 import com.leesanghyuk.model.ExperimentInfoDTO;
 import com.leesanghyuk.model.FacilityInfoDTO;
 import com.leesanghyuk.model.UserLoginDTO;
-import com.leesanghyuk.service.GetExperimentInfoService;
-import com.leesanghyuk.service.GetFacilityInfoService;
-import com.leesanghyuk.service.UpdateExperiment_getService;
-import com.leesanghyuk.service.UserLoginService;
+import com.leesanghyuk.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 
@@ -37,6 +35,34 @@ public class HomeController {
 
     @Autowired
     UpdateExperiment_getService updateexperiment_getservice;
+
+    @Autowired
+    UpdateExperiment_upService updateexperiment_upservice;
+
+    @Autowired
+    UpdateFacility_getService updatefacility_getservice;
+
+    @Autowired
+    UpdateFacility_upService updatefacility_upservice;
+
+    @Autowired
+    AddExperimentService addexperimentservice;
+
+    @Autowired
+    AddFacilityService addfacilityservice;
+
+    @Autowired
+    DeleteExperimentService deleteexperimentservice;
+
+    @Autowired
+    DeleteFacilityService deletefacilityservice;
+
+    @Autowired
+    GetBookingsService getbookingsservice;
+
+    @Autowired
+    UpdateBookingsService updatebookingsservice;
+
 
     @RequestMapping()
     public String Login(HttpServletRequest request){
@@ -117,11 +143,13 @@ public class HomeController {
         //将取到的实验课程信息传到前端表格中
         model.addAttribute("experimentinfo",experimentInfoDTO);
 
-        return "updateexperiment_update";
+        return "updateexperiment";
     }
 
     @RequestMapping("/updateexperiment_update")
-    public String updateexperiment_update(Model model , HttpServletRequest request) {
+    public String updateexperiment_update(Model model , HttpServletRequest request) throws UnsupportedEncodingException {
+        request.setCharacterEncoding("UTF-8");
+        int id = Integer.parseInt(request.getParameter("id"));
         String coursename = request.getParameter("coursename");
         String experimentname = request.getParameter("experimentname");
         String facility = request.getParameter("facility");
@@ -131,28 +159,195 @@ public class HomeController {
         int totalbooking = Integer.parseInt(request.getParameter("totalbooking"));
 
         ExperimentInfoDTO experimentInfoDTO = new ExperimentInfoDTO();
-        experimentInfoDTO.setCoursename("coursename");
-        experimentInfoDTO.setExperimentname("experimentname");
-        experimentInfoDTO.setFacility("facility");
-        experimentInfoDTO.setQuantityoffacility("quantityoffacility");
-        experimentInfoDTO.setDuration("duration");
-        experimentInfoDTO.setClassroom("classroom");
-        experimentInfoDTO.setTotalbooking(Integer.parseInt("totalbooking"));
-        System.out.println(coursename);
+        experimentInfoDTO.setId(id);
+        experimentInfoDTO.setCoursename(coursename);
+        experimentInfoDTO.setExperimentname(experimentname);
+        experimentInfoDTO.setFacility(facility);
+        experimentInfoDTO.setQuantityoffacility(quantityoffacility);
+        experimentInfoDTO.setDuration(duration);
+        experimentInfoDTO.setClassroom(classroom);
+        experimentInfoDTO.setTotalbooking(totalbooking);
+        System.out.println(experimentname+coursename+ "   "+totalbooking+"  ");
+
+        updateexperiment_upservice.updateExperimentInfo_up(experimentInfoDTO);
+
+        List<ExperimentInfoDTO> experimentInfoDTOList = getexperimentinfoservice.getExperimentInfo();
+        model.addAttribute("experimentinfo",experimentInfoDTOList);
+
+        List<FacilityInfoDTO> facilityInfoDTOList = getfacilityinfoservice.getFacilityInfo();
+        model.addAttribute("facilityinfo",facilityInfoDTOList);
+
         return "index_teacher";
     }
 
+    @RequestMapping("/updatefacility")
+    public String updatefacility(Model model , HttpServletRequest request) {
+        String id = request.getParameter("id");
+        System.out.println("需要更新的实验仪器的id="+id);
+        FacilityInfoDTO facilityInfoDTO = updatefacility_getservice.getFacilityInfoByID(Integer.parseInt(id));
+        model.addAttribute("facilityinfo",facilityInfoDTO);
+        return "updatefacility";
+    }
+
+    @RequestMapping("/updatefacility_update")
+    public String updatefacility_update(Model model , HttpServletRequest request) throws UnsupportedEncodingException {
+        request.setCharacterEncoding("UTF-8");
+        int id = Integer.parseInt(request.getParameter("id"));
+        String name = request.getParameter("name");
+        String level = request.getParameter("level");
+        int totalbooking = Integer.parseInt(request.getParameter("totalbooking"));
+
+        FacilityInfoDTO facilityInfoDTO = new FacilityInfoDTO();
+        facilityInfoDTO.setId(id);
+        facilityInfoDTO.setName(name);
+        facilityInfoDTO.setLevel(level);
+        facilityInfoDTO.setTotalbooking(totalbooking);
+
+        updatefacility_upservice.updateFacilityInfo(facilityInfoDTO);
+
+        List<ExperimentInfoDTO> experimentInfoDTOList = getexperimentinfoservice.getExperimentInfo();
+        model.addAttribute("experimentinfo",experimentInfoDTOList);
+
+        List<FacilityInfoDTO> facilityInfoDTOList = getfacilityinfoservice.getFacilityInfo();
+        model.addAttribute("facilityinfo",facilityInfoDTOList);
+
+        return "index_teacher";
+    }
+
+    @RequestMapping("/addexperiment")
+    public String addexperiment(Model model) {
+        return "addexperiment";
+    }
 
 
+    @RequestMapping("/addexperiment_add")
+    public String addexperiment_add(Model model , HttpServletRequest request) throws UnsupportedEncodingException {
+        request.setCharacterEncoding("UTF-8");
+        String coursename = request.getParameter("coursename");
+        String experimentname =request.getParameter("experimentname");
+        String facility = request.getParameter("facility");
+        String quantityoffacility = request.getParameter("quantityoffacility");
+        String duration = request.getParameter("duration");
+        String classroom = request.getParameter("classroom");
+        int totalbooking = Integer.parseInt(request.getParameter("totalbooking"));
 
+        ExperimentInfoDTO experimentInfoDTO = new ExperimentInfoDTO();
+        experimentInfoDTO.setCoursename(coursename);
+        experimentInfoDTO.setExperimentname(experimentname);
+        experimentInfoDTO.setFacility(facility);
+        experimentInfoDTO.setQuantityoffacility(quantityoffacility);
+        experimentInfoDTO.setDuration(duration);
+        experimentInfoDTO.setClassroom(classroom);
+        experimentInfoDTO.setTotalbooking(totalbooking);
 
+        addexperimentservice.addExperiment(experimentInfoDTO);
 
+        List<ExperimentInfoDTO> experimentInfoDTOList = getexperimentinfoservice.getExperimentInfo();
+        model.addAttribute("experimentinfo",experimentInfoDTOList);
 
+        List<FacilityInfoDTO> facilityInfoDTOList = getfacilityinfoservice.getFacilityInfo();
+        model.addAttribute("facilityinfo",facilityInfoDTOList);
+
+        return "index_teacher";
+    }
+
+    @RequestMapping("/addfacility")
+    public String addfacility(Model model) {
+        return "addfacility";
+    }
+
+    @RequestMapping("/addfacility_add")
+    public String addfacility_add(Model model , HttpServletRequest request) throws UnsupportedEncodingException {
+        request.setCharacterEncoding("UTF-8");
+        String name = request.getParameter("name");
+        String level = request.getParameter("level");
+        int totalbooking = Integer.parseInt(request.getParameter("totalbooking"));
+
+        FacilityInfoDTO facilityInfoDTO = new FacilityInfoDTO();
+        facilityInfoDTO.setName(name);
+        facilityInfoDTO.setLevel(level);
+        facilityInfoDTO.setTotalbooking(totalbooking);
+
+        addfacilityservice.addFacility(facilityInfoDTO);
+
+        List<ExperimentInfoDTO> experimentInfoDTOList = getexperimentinfoservice.getExperimentInfo();
+        model.addAttribute("experimentinfo",experimentInfoDTOList);
+
+        List<FacilityInfoDTO> facilityInfoDTOList = getfacilityinfoservice.getFacilityInfo();
+        model.addAttribute("facilityinfo",facilityInfoDTOList);
+
+        return "index_teacher";
+    }
+
+    @RequestMapping("/deleteexperiment")
+    public String deleteexperiment(Model model , HttpServletRequest request) {
+        String id = request.getParameter("id");
+        System.out.println("要删除的实验课程的id="+id);
+        deleteexperimentservice.deleteExperiment(Integer.parseInt(id));
+
+        List<ExperimentInfoDTO> experimentInfoDTOList = getexperimentinfoservice.getExperimentInfo();
+        model.addAttribute("experimentinfo",experimentInfoDTOList);
+
+        List<FacilityInfoDTO> facilityInfoDTOList = getfacilityinfoservice.getFacilityInfo();
+        model.addAttribute("facilityinfo",facilityInfoDTOList);
+
+        return "index_teacher";
+    }
+
+    @RequestMapping("/deletefacility")
+    public String deletefacility(Model model , HttpServletRequest request) {
+        String id = request.getParameter("id");
+        deletefacilityservice.deleteFacility(Integer.parseInt(id));
+
+        List<ExperimentInfoDTO> experimentInfoDTOList = getexperimentinfoservice.getExperimentInfo();
+        model.addAttribute("experimentinfo",experimentInfoDTOList);
+
+        List<FacilityInfoDTO> facilityInfoDTOList = getfacilityinfoservice.getFacilityInfo();
+        model.addAttribute("facilityinfo",facilityInfoDTOList);
+
+        return "index_teacher";
+    }
 
     @RequestMapping("/experimentpage")
-    public String experimentpage_class(Model ec) {
+    public String experimentpage(Model model) {
         return "experimentpage";
     }
+
+    @RequestMapping("/experimentpage_class")
+    public String experimentpage_class(Model model , HttpServletRequest request) throws UnsupportedEncodingException {
+        request.setCharacterEncoding("UTF-8");
+        String experimentname = request.getParameter("experimentname");
+        System.out.println(experimentname);
+        String classroom = request.getParameter("classroom");
+        System.out.println(classroom);
+        int bookingnumber = Integer.parseInt(request.getParameter("bookingnumber"));
+        System.out.println(bookingnumber);
+
+        ExperimentInfoDTO experimentInfoDTO = new ExperimentInfoDTO();
+        experimentInfoDTO.setExperimentname(experimentname);
+        experimentInfoDTO.setClassroom(classroom);
+
+        int bookings = getbookingsservice.getBookings(experimentInfoDTO);
+
+        if (bookings < 1){
+            return "errorpage";
+        }else {
+            bookings = bookings - bookingnumber;
+            System.out.println(bookings);
+            ExperimentInfoDTO experimentInfoDTO1 = new ExperimentInfoDTO();
+            experimentInfoDTO1.setExperimentname(experimentname);
+            experimentInfoDTO1.setClassroom(classroom);
+            experimentInfoDTO1.setBookings(bookings);
+            updatebookingsservice.updateBookings(experimentInfoDTO1);
+
+            return "recordpage";
+        }
+    }
+
+
+
+
+
     @RequestMapping("/instrumentpage")
     public String instrumentpage(Model i) {
         return "instrumentpage";

@@ -96,16 +96,27 @@
                     <h3>实验室课程预约</h3>
                 </div><!--contenttitle-->
 
-                <form class="stdform" action="" method="post">
+                <form class="stdform" action="/experimentpage_class" method="post">
+
+                    <p>
+                        <label>实验课程</label>
+                        <span class="field">
+                            <select name="coursename" class="uniformselect">
+                                <option value="">工程材料A</option>
+                                <option value="">工程材料B</option>
+                                <option value="">材料科学基础</option>
+                                <option value="">材料热力学与物理化学</option>
+                            </select>
+                        </span>
+                    </p>
 
                     <p>
                         <label>实验名称</label>
                         <span class="field">
-                            <select name="select" class="uniformselect">
-                            	<option value="">铁碳平衡组织观察分析</option>
-                                <option value="">热处理及硬度（工程材料A）</option>
+                            <select name="experimentname" class="uniformselect">
+                                <option value="">铁碳平衡组织观察分析</option>
+                                <option value="">热处理及硬度</option>
                                 <option value="">非平衡组织观察分析</option>
-                                <option value="">热处理及硬度（工程材料B）</option>
                                 <option value="">平衡组织观察分析</option>
                                 <option value="">金相试样制备+</option>
                                 <option value="">二元合金相图</option>
@@ -119,7 +130,7 @@
                     <p>
                         <label>教室选择</label>
                         <span class="field">
-                            <select name="select" class="uniformselect">
+                            <select name="classroom" class="uniformselect">
                             	<option value="">B405</option>
                                 <option value="">B407</option>
                                 <option value="">B409</option>
@@ -130,19 +141,19 @@
 
                     <p>
                         <label>预约班级</label>
-                        <span class="field"><input type="text" name="input1" class="smallinput" /></span>
+                        <span class="field"><input type="text" name="bookingman" class="smallinput" /></span>
                         <small class="desc">请按“专业-班级”填写，如：工程材料-1班</small>
                     </p>
 
                     <p>
                         <label>预约人数</label>
-                        <span class="field"><input type="text" name="input1" class="smallinput" /></span>
+                        <span class="field"><input type="text" name="bookingnumber" class="smallinput" /></span>
                     </p>
 
                     <p>
                         <label>时间选择</label>
                         <span class="field">
-                            <select name="select" class="uniformselect">
+                            <select name="time" class="uniformselect">
                             	<option value="">8:00-9:35</option>
                                 <option value="">9:50-11:25</option>
                                 <option value="">2:00-3:35</option>
@@ -171,16 +182,27 @@
                     <h3>实验室课程预约</h3>
                 </div><!--contenttitle-->
 
-                <form id="form1" class="stdform" method="post" action="">
+                <form class="stdform" action="" method="post">
+
+                    <p>
+                        <label>实验课程</label>
+                        <span class="field">
+                            <select name="coursename" class="uniformselect">
+                                <option value="">工程材料A</option>
+                                <option value="">工程材料B</option>
+                                <option value="">材料科学基础</option>
+                                <option value="">材料热力学与物理化学</option>
+                            </select>
+                        </span>
+                    </p>
 
                     <p>
                         <label>实验名称</label>
                         <span class="field">
-                            <select name="select" class="uniformselect">
-                            	<option value="">铁碳平衡组织观察分析</option>
-                                <option value="">热处理及硬度（工程材料A）</option>
+                            <select name="experimentname" class="uniformselect">
+                                <option value="">铁碳平衡组织观察分析</option>
+                                <option value="">热处理及硬度</option>
                                 <option value="">非平衡组织观察分析</option>
-                                <option value="">热处理及硬度（工程材料B）</option>
                                 <option value="">平衡组织观察分析</option>
                                 <option value="">金相试样制备+</option>
                                 <option value="">二元合金相图</option>
@@ -194,7 +216,7 @@
                     <p>
                         <label>教室选择</label>
                         <span class="field">
-                            <select name="select" class="uniformselect">
+                            <select name="classroom" class="uniformselect">
                             	<option value="">B405</option>
                                 <option value="">B407</option>
                                 <option value="">B409</option>
@@ -204,9 +226,20 @@
                     </p>
 
                     <p>
+                        <label>预约人姓名</label>
+                        <span class="field"><input type="text" name="bookingman" class="smallinput" /></span>
+                        <small class="desc">如：张三</small>
+                    </p>
+
+                    <p>
+                        <label>预约人数</label>
+                        <span class="field"><input type="text" name="bookingnumber" class="smallinput" /></span>
+                    </p>
+
+                    <p>
                         <label>时间选择</label>
                         <span class="field">
-                            <select name="select" class="uniformselect">
+                            <select name="time" class="uniformselect">
                             	<option value="">8:00-9:35</option>
                                 <option value="">9:50-11:25</option>
                                 <option value="">2:00-3:35</option>
@@ -223,7 +256,7 @@
                         <input type="reset" class="reset radius2" value="撤销" />
                     </p>
 
-                    <br />
+
 
                 </form>
 
