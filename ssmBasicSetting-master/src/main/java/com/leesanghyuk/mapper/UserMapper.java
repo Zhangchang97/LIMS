@@ -1,10 +1,7 @@
 package com.leesanghyuk.mapper;
 
 
-import com.leesanghyuk.model.ExperimentInfoDTO;
-import com.leesanghyuk.model.ExperimentRecordDTO;
-import com.leesanghyuk.model.FacilityInfoDTO;
-import com.leesanghyuk.model.UserLoginDTO;
+import com.leesanghyuk.model.*;
 import org.springframework.stereotype.Component;
 import java.util.List;
 
@@ -54,4 +51,16 @@ public interface UserMapper {
 
     //预约操作，将实验课程记录表中的信息在记录页面取出来显示
     List<ExperimentRecordDTO> getExperimentRecord();
+
+    //预约操作,将预约的实验仪器信息存入实验仪器记录表中
+    void addFacilityRecord(FacilityRecordDTO facilityRecordDTO);
+
+    //预约操作，根据name取数据
+    int getBooking(FacilityInfoDTO facilityInfoDTO);
+
+    //预约操作，根据name将数据更新
+    void updateBooking(FacilityInfoDTO facilityInfoDTO);
+
+    //预约操作，将预约的实验仪器信息取出
+    List<FacilityRecordDTO> getFacilityRecord();
 }

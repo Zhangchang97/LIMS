@@ -1,10 +1,7 @@
 package com.leesanghyuk.web;
 
 
-import com.leesanghyuk.model.ExperimentInfoDTO;
-import com.leesanghyuk.model.ExperimentRecordDTO;
-import com.leesanghyuk.model.FacilityInfoDTO;
-import com.leesanghyuk.model.UserLoginDTO;
+import com.leesanghyuk.model.*;
 import com.leesanghyuk.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -69,6 +66,18 @@ public class HomeController {
 
     @Autowired
     GetExperimentRecordService getexperimentrecordservice;
+
+    @Autowired
+    AddFacilityRecordService addfacilityrecordservice;
+
+    @Autowired
+    GetBookingService getbookingservice;
+
+    @Autowired
+    UpdateBookingService updatebookingservice;
+
+    @Autowired
+    GetFacilityRecordService getfacilityrecordservice;
 
 
     @RequestMapping()
@@ -350,6 +359,7 @@ public class HomeController {
         experimentInfoDTO.setClassroom(classroom);
 
         int bookings = getbookingsservice.getBookings(experimentInfoDTO);
+        System.out.println("取到的可预约的人数bookings="+bookings);
 
         if (bookings < 1){
             return "errorpage";
@@ -362,11 +372,18 @@ public class HomeController {
             experimentInfoDTO1.setBookings(bookings);
             updatebookingsservice.updateBookings(experimentInfoDTO1);
 
+            List<ExperimentRecordDTO> experimentRecordDTOList = getexperimentrecordservice.getExperimentRecord();
+//            for(int i = 0 ; i < 3 ; i++) {
+//                System.out.println(experimentRecordDTOList.get(i).getCoursename());
+//            }
+            model.addAttribute("experimentrecord",experimentRecordDTOList);
+
+            List<FacilityRecordDTO> facilityRecordDTOList = getfacilityrecordservice.getFacilityRecord();
+            model.addAttribute("facilityrecord",facilityRecordDTOList);
+
             return "recordpage";
         }
     }
-
-
 
     @RequestMapping("/instrumentpage")
     public String instrumentpage(Model model) {
@@ -374,10 +391,70 @@ public class HomeController {
         model.addAttribute("facilityinfo",facilityInfoDTOList);
         return "instrumentpage";
     }
+
+    @RequestMapping("/instrumentpage_student")
+    public String instrumentpage_student(Model model , HttpServletRequest request) throws UnsupportedEncodingException {
+        request.setCharacterEncoding("UTF-8");
+        String name = request.getParameter("name");
+        String bookingman = request.getParameter("bookingman");
+        int bookingnumber = Integer.parseInt(request.getParameter("bookingnumber"));
+        String time = request.getParameter("time");
+
+        FacilityRecordDTO facilityRecordDTO = new FacilityRecordDTO();
+        facilityRecordDTO.setName(name);
+        facilityRecordDTO.setBookingman(bookingman);
+        facilityRecordDTO.setBookingnumber(bookingnumber);
+        facilityRecordDTO.setTime(time);
+
+        addfacilityrecordservice.addFacilityRecord(facilityRecordDTO);
+
+        FacilityInfoDTO facilityInfoDTO = new FacilityInfoDTO();
+        facilityInfoDTO.setName(name);
+        System.out.println("将name传入了facilityInfoDTO对象中");
+
+        int booking = getbookingservice.getBooking(facilityInfoDTO);
+        System.out.println("根据name取出来的booking的指="+booking);
+
+        if(booking < 1){
+            return "error";
+        }else {
+            booking = booking - bookingnumber;
+            System.out.println("更改以后booking的指="+booking);
+            FacilityInfoDTO facilityInfoDTO1 = new FacilityInfoDTO();
+            facilityInfoDTO1.setBooking(booking);
+            facilityInfoDTO1.setName(name);
+            updatebookingservice.updateBooking(facilityInfoDTO1);
+
+
+
+            List<ExperimentRecordDTO> experimentRecordDTOList = getexperimentrecordservice.getExperimentRecord();
+//            for(int i = 0 ; i < 3 ; i++) {
+//                System.out.println(experimentRecordDTOList.get(i).getCoursename());
+//            }
+            model.addAttribute("experimentrecord",experimentRecordDTOList);
+
+            List<FacilityRecordDTO> facilityRecordDTOList = getfacilityrecordservice.getFacilityRecord();
+            model.addAttribute("facilityrecord",facilityRecordDTOList);
+            return "recordpage";
+        }
+}
+
+
+
+
+
+
+
     @RequestMapping("/recordpage")
     public String recordpage(Model model) {
         List<ExperimentRecordDTO> experimentRecordDTOList = getexperimentrecordservice.getExperimentRecord();
+        for(int i = 0 ; i < 3 ; i++) {
+            System.out.println(experimentRecordDTOList.get(i).getCoursename());
+        }
         model.addAttribute("experimentrecord",experimentRecordDTOList);
+
+        List<FacilityRecordDTO> facilityRecordDTOList = getfacilityrecordservice.getFacilityRecord();
+        model.addAttribute("facilityrecord",facilityRecordDTOList);
         return "recordpage";
     }
 }

@@ -75,4 +75,23 @@
     <select id="getExperimentRecord" resultType="ExperimentRecordDTO">
         SELECT * FROM erecord
     </select>
+
+    <insert id="addFacilityRecord" parameterType="FacilityRecordDTO" useGeneratedKeys="true">
+        INSERT INTO frecord(name,bookingman,bookingnumber,time)
+        VALUES (#{name},#{bookingman},#{bookingnumber},#{time})
+    </insert>
+
+    <select id="getBooking" parameterType="FacilityInfoDTO">
+        SELECT booking FROM facilityinfo WHERE name=#{name}
+    </select>
+
+    <update id="updateBooking" parameterType="FacilityInfoDTO">
+        UPDATE facilityinfo
+        SET booking=#{booking}
+        WHERE name=#{name}
+    </update>
+
+    <select id="getFacilityRecord" resultType="FacilityRecordDTO">
+        SELECT * FROM frecord
+    </select>
 </mapper>

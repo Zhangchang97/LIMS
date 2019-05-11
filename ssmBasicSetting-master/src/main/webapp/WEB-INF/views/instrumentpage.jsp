@@ -84,14 +84,14 @@
                     <h3>实验室仪器预约</h3>
                 </div><!--contenttitle-->
 
-                <form class="stdform" action="/instrumentpage_class" method="post">
+                <form class="stdform" action="/instrumentpage_student" method="post">
 
                     <p>
                         <label>实验仪器</label>
                         <span class="field">
                             <select name="name" class="uniformselect">
-                                <c:forEach var="" items="" varStatus="Status">
-                                    <option value=""></option>
+                                <c:forEach var="f" items="${facilityinfo}" varStatus="Status">
+                                    <option value="${f.name}">${f.name}</option>
                                 </c:forEach>
                             </select>
                         </span>

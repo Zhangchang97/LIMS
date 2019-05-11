@@ -123,7 +123,7 @@
                     </tfoot>
 
                     <tbody>
-                    <c:forEach var="er" items="experimentrecord" varStatus="Status">
+                    <c:forEach var="er" items="${experimentrecord}" varStatus="Status">
                         <tr>
                             <td name="coursename">${er.coursename}</td>
                             <td name="experimentname">${er.experimentname}</td>
@@ -133,13 +133,6 @@
                             <td name="classroom">${er.classroom}</td>
                         </tr>
                     </c:forEach>
-
-                    <tr>
-                        <td>原电池电动势</td>
-                        <td>张三</td>
-                        <td>14：00-15:00</td>
-                        <td class="center">B407</td>
-                    </tr>
                     </tbody>
                 </table>
 
@@ -163,35 +156,30 @@
                     <thead>
                     <tr>
                         <th class="head0">设备名称</th>
-                        <th class="head1">使用者</th>
-                        <th class="head0">使用时间</th>
-                        <th class="head0">使用地点</th>
+                        <th class="head1">预约人姓名</th>
+                        <th class="head0">预约数量</th>
+                        <th class="head0">预约时间</th>
                     </tr>
                     </thead>
 
                     <tfoot>
                     <tr>
                         <th class="head0">设备名称</th>
-                        <th class="head1">使用者</th>
-                        <th class="head0">使用时间</th>
-                        <th class="head0">使用地点</th>
+                        <th class="head1">预约人姓名</th>
+                        <th class="head0">预约数量</th>
+                        <th class="head0">预约时间</th>
                     </tr>
                     </tfoot>
 
                     <tbody>
+                    <c:forEach var="fr" items="${facilityrecord}" varStatus="Status">
                     <tr>
-                        <td>超声波清洗仪</td>
-                        <td>张三</td>
-                        <td>9：00-10:00</td>
-                        <td class="center">B405</td>
+                        <td name="name">${fr.name}</td>
+                        <td name="bookingman">${fr.bookingman}</td>
+                        <td name="bookingnumber">${fr.bookingnumber}</td>
+                        <td name="time">${fr.time}</td>
                     </tr>
-
-                    <tr>
-                        <td>燃烧热实验装置</td>
-                        <td>张三</td>
-                        <td>14：00-15:00</td>
-                        <td class="center">B407</td>
-                    </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
 

@@ -1,12 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 10641
-  Date: 2019/3/29
-  Time: 20:04
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" pageEncoding="utf-8"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -90,14 +84,14 @@
                     <h3>实验室仪器预约</h3>
                 </div><!--contenttitle-->
 
-                <form class="stdform" action="/instrumentpage_class" method="post">
+                <form class="stdform" action="/instrumentpage_student" method="post">
 
                     <p>
                         <label>实验仪器</label>
                         <span class="field">
                             <select name="name" class="uniformselect">
-                                <c:forEach var="" items="" varStatus="Status">
-                                    <option value=""></option>
+                                <c:forEach var="f" items="${facilityinfo}" varStatus="Status">
+                                    <option value="${f.name}">${f.name}</option>
                                 </c:forEach>
                             </select>
                         </span>
