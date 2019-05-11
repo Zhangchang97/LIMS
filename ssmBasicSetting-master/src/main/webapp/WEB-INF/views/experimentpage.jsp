@@ -5,10 +5,10 @@
   Time: 14:40
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" pageEncoding="utf-8"%>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -102,10 +102,9 @@
                         <label>实验课程</label>
                         <span class="field">
                             <select name="coursename" class="uniformselect">
-                                <option value="">工程材料A</option>
-                                <option value="">工程材料B</option>
-                                <option value="">材料科学基础</option>
-                                <option value="">材料热力学与物理化学</option>
+                                <c:forEach var="e" items="${experimentinfo}" varStatus="Status">
+                                    <option value="${e.coursename}">${e.coursename}</option>
+                                </c:forEach>
                             </select>
                         </span>
                     </p>
@@ -114,15 +113,9 @@
                         <label>实验名称</label>
                         <span class="field">
                             <select name="experimentname" class="uniformselect">
-                                <option value="">铁碳平衡组织观察分析</option>
-                                <option value="">热处理及硬度</option>
-                                <option value="">非平衡组织观察分析</option>
-                                <option value="">平衡组织观察分析</option>
-                                <option value="">金相试样制备+</option>
-                                <option value="">二元合金相图</option>
-                                <option value="">原电池电动势</option>
-                                <option value="">燃烧热测定</option>
-                                <option value="">乙酸乙酯的皂化</option>
+                                <c:forEach var="e" items="${experimentinfo}" varStatus="Status">
+                                    <option value="${e.experimentname}">${e.experimentname}</option>
+                                </c:forEach>
                             </select>
                         </span>
                     </p>
@@ -131,10 +124,9 @@
                         <label>教室选择</label>
                         <span class="field">
                             <select name="classroom" class="uniformselect">
-                            	<option value="">B405</option>
-                                <option value="">B407</option>
-                                <option value="">B409</option>
-                                <option value="">B411</option>
+                            	<c:forEach var="e" items="${experimentinfo}" varStatus="Status">
+                                    <option value="${e.classroom}">${e.classroom}</option>
+                                </c:forEach>
                             </select>
                         </span>
                     </p>
@@ -154,10 +146,10 @@
                         <label>时间选择</label>
                         <span class="field">
                             <select name="time" class="uniformselect">
-                            	<option value="">8:00-9:35</option>
-                                <option value="">9:50-11:25</option>
-                                <option value="">2:00-3:35</option>
-                                <option value="">3:55-5:35</option>
+                            	<option value="8:00-9:35">8:00-9:35</option>
+                                <option value="9:50-11:25">9:50-11:25</option>
+                                <option value="2:00-3:35">2:00-3:35</option>
+                                <option value="3:55-5:35">3:55-5:35</option>
                             </select>
                         </span>
                     </p>
@@ -182,16 +174,15 @@
                     <h3>实验室课程预约</h3>
                 </div><!--contenttitle-->
 
-                <form class="stdform" action="" method="post">
+                <form class="stdform" action="/experimentpage_class" method="post">
 
                     <p>
                         <label>实验课程</label>
                         <span class="field">
                             <select name="coursename" class="uniformselect">
-                                <option value="">工程材料A</option>
-                                <option value="">工程材料B</option>
-                                <option value="">材料科学基础</option>
-                                <option value="">材料热力学与物理化学</option>
+                                <c:forEach var="e" items="${experimentinfo}" varStatus="Status">
+                                    <option value="${e.coursename}">${e.coursename}</option>
+                                </c:forEach>
                             </select>
                         </span>
                     </p>
@@ -200,15 +191,9 @@
                         <label>实验名称</label>
                         <span class="field">
                             <select name="experimentname" class="uniformselect">
-                                <option value="">铁碳平衡组织观察分析</option>
-                                <option value="">热处理及硬度</option>
-                                <option value="">非平衡组织观察分析</option>
-                                <option value="">平衡组织观察分析</option>
-                                <option value="">金相试样制备+</option>
-                                <option value="">二元合金相图</option>
-                                <option value="">原电池电动势</option>
-                                <option value="">燃烧热测定</option>
-                                <option value="">乙酸乙酯的皂化</option>
+                                <c:forEach var="e" items="${experimentinfo}" varStatus="Status">
+                                    <option value="${e.experimentname}">${e.experimentname}</option>
+                                </c:forEach>
                             </select>
                         </span>
                     </p>
@@ -217,10 +202,9 @@
                         <label>教室选择</label>
                         <span class="field">
                             <select name="classroom" class="uniformselect">
-                            	<option value="">B405</option>
-                                <option value="">B407</option>
-                                <option value="">B409</option>
-                                <option value="">B411</option>
+                            	<c:forEach var="e" items="${experimentinfo}" varStatus="Status">
+                                    <option value="${e.classroom}">${e.classroom}</option>
+                                </c:forEach>
                             </select>
                         </span>
                     </p>
@@ -240,10 +224,10 @@
                         <label>时间选择</label>
                         <span class="field">
                             <select name="time" class="uniformselect">
-                            	<option value="">8:00-9:35</option>
-                                <option value="">9:50-11:25</option>
-                                <option value="">2:00-3:35</option>
-                                <option value="">3:55-5:35</option>
+                            	<option value="8:00-9:35">8:00-9:35</option>
+                                <option value="9:50-11:25">9:50-11:25</option>
+                                <option value="2:00-3:35">2:00-3:35</option>
+                                <option value="3:55-5:35">3:55-5:35</option>
                             </select>
                         </span>
                     </p>

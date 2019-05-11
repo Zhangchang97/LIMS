@@ -2,6 +2,7 @@ package com.leesanghyuk.web;
 
 
 import com.leesanghyuk.model.ExperimentInfoDTO;
+import com.leesanghyuk.model.ExperimentRecordDTO;
 import com.leesanghyuk.model.FacilityInfoDTO;
 import com.leesanghyuk.model.UserLoginDTO;
 import com.leesanghyuk.service.*;
@@ -62,6 +63,12 @@ public class HomeController {
 
     @Autowired
     UpdateBookingsService updatebookingsservice;
+
+    @Autowired
+    AddExperimentRecordService addexperimentrecordservice;
+
+    @Autowired
+    GetExperimentRecordService getexperimentrecordservice;
 
 
     @RequestMapping()
@@ -310,6 +317,8 @@ public class HomeController {
 
     @RequestMapping("/experimentpage")
     public String experimentpage(Model model) {
+        List<ExperimentInfoDTO> experimentInfoDTOList = getexperimentinfoservice.getExperimentInfo();
+        model.addAttribute("experimentinfo",experimentInfoDTOList);
         return "experimentpage";
     }
 
@@ -318,10 +327,23 @@ public class HomeController {
         request.setCharacterEncoding("UTF-8");
         String experimentname = request.getParameter("experimentname");
         System.out.println(experimentname);
+        String coursename = request.getParameter("coursename");
         String classroom = request.getParameter("classroom");
         System.out.println(classroom);
+        String bookingman = request.getParameter("bookingman");
+        String time = request.getParameter("time");
         int bookingnumber = Integer.parseInt(request.getParameter("bookingnumber"));
         System.out.println(bookingnumber);
+
+        ExperimentRecordDTO experimentRecordDTO = new ExperimentRecordDTO();
+        experimentRecordDTO.setCoursename(coursename);
+        experimentRecordDTO.setExperimentname(experimentname);
+        experimentRecordDTO.setClassroom(classroom);
+        experimentRecordDTO.setBookingman(bookingman);
+        experimentRecordDTO.setBookingnumber(bookingnumber);
+        experimentRecordDTO.setTime(time);
+
+        addexperimentrecordservice.addExperimentRecord(experimentRecordDTO);
 
         ExperimentInfoDTO experimentInfoDTO = new ExperimentInfoDTO();
         experimentInfoDTO.setExperimentname(experimentname);
@@ -346,14 +368,16 @@ public class HomeController {
 
 
 
-
-
     @RequestMapping("/instrumentpage")
-    public String instrumentpage(Model i) {
+    public String instrumentpage(Model model) {
+        List<FacilityInfoDTO> facilityInfoDTOList = getfacilityinfoservice.getFacilityInfo();
+        model.addAttribute("facilityinfo",facilityInfoDTOList);
         return "instrumentpage";
     }
     @RequestMapping("/recordpage")
-    public String recordpage(Model r) {
+    public String recordpage(Model model) {
+        List<ExperimentRecordDTO> experimentRecordDTOList = getexperimentrecordservice.getExperimentRecord();
+        model.addAttribute("experimentrecord",experimentRecordDTOList);
         return "recordpage";
     }
 }

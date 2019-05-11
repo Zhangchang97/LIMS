@@ -66,4 +66,13 @@
         SET bookings=#{bookings}
         WHERE experimentname=#{experimentname} and classroom = #{classroom}
     </update>
+
+    <insert id="addExperimentRecord" parameterType="ExperimentRecordDTO" useGeneratedKeys="true">
+        INSERT INTO erecord (coursename,experimentname,classroom,bookingman,bookingnumber,time)
+        VALUES (#{coursename},#{experimentname},#{classroom},#{bookingman},#{bookingnumber},#{time})
+    </insert>
+
+    <select id="getExperimentRecord" resultType="ExperimentRecordDTO">
+        SELECT * FROM erecord
+    </select>
 </mapper>

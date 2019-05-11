@@ -2,6 +2,7 @@ package com.leesanghyuk.mapper;
 
 
 import com.leesanghyuk.model.ExperimentInfoDTO;
+import com.leesanghyuk.model.ExperimentRecordDTO;
 import com.leesanghyuk.model.FacilityInfoDTO;
 import com.leesanghyuk.model.UserLoginDTO;
 import org.springframework.stereotype.Component;
@@ -47,4 +48,10 @@ public interface UserMapper {
 
     //预约操作，根据coursename和classroom更新bookings数据
     void updatebookings(ExperimentInfoDTO experimentInfoDTO);
+
+    //预约操纵，将预约的实验课程信息存入实验课程记录表中
+    void addExperimentRecord(ExperimentRecordDTO experimentRecordDTO);
+
+    //预约操作，将实验课程记录表中的信息在记录页面取出来显示
+    List<ExperimentRecordDTO> getExperimentRecord();
 }

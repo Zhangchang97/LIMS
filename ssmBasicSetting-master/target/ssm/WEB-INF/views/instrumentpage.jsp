@@ -70,32 +70,6 @@
                 </ul>
             </li>
             <li><a href="recordpage" class="elements">记录</a></li>
-            <%--<li><a href="asserts/filemanager.html" class="gallery">File Manager</a></li>--%>
-            <%--<li><a href="asserts/widgets.html" class="widgets">Widgets</a></li>--%>
-            <%--<li><a href="asserts/calendar.html" class="calendar">Calendar</a></li>--%>
-            <%--<li><a href="asserts/support.html" class="support">Customer Support</a></li>--%>
-            <%--<li><a href="asserts/typography.html" class="typo">Typography</a></li>--%>
-            <%--<li><a href="asserts/buttons.html" class="buttons">Buttons &amp; Icons</a></li>--%>
-            <%--<li><a href="#error" class="error">Error Pages</a>--%>
-                <%--<span class="arrow"></span>--%>
-                <%--<ul id="error">--%>
-                    <%--<li><a href="asserts/notfound.html">Page Not Found</a></li>--%>
-                    <%--<li><a href="asserts/forbidden.html">Forbidden Page</a></li>--%>
-                    <%--<li><a href="asserts/internal.html">Internal Server Error</a></li>--%>
-                    <%--<li><a href="asserts/offline.html">Offline</a></li>--%>
-                <%--</ul>--%>
-            <%--</li>--%>
-            <%--<li><a href="#addons" class="addons">Addons</a>--%>
-                <%--<span class="arrow"></span>--%>
-                <%--<ul id="addons">--%>
-                    <%--<li><a href="asserts/newsfeed.html">News Feed</a></li>--%>
-                    <%--<li><a href="asserts/profile.html">Profile Page</a></li>--%>
-                    <%--<li><a href="asserts/productlist.html">Product List</a></li>--%>
-                    <%--<li><a href="asserts/photo.html">Photo/Video Sharing</a></li>--%>
-                    <%--<li><a href="asserts/gallery.html">Gallery</a></li>--%>
-                    <%--<li><a href="asserts/invoice.html">Invoice</a></li>--%>
-                <%--</ul>--%>
-            <%--</li>--%>
         </ul>
         <a class="togglemenu"></a>
         <br /><br />
@@ -116,159 +90,54 @@
                     <h3>实验室仪器预约</h3>
                 </div><!--contenttitle-->
 
-                <table cellpadding="0" cellspacing="0" border="0" class="stdtable">
-                    <colgroup>
-                        <col class="con0" />
-                        <col class="con1" />
-                        <col class="con0" />
-                    </colgroup>
-                    <thead>
-                    <tr>
-                        <th class="head0">仪器名称</th>
-                        <th class="head1">是否预约</th>
-                        <th class="head0">预约数量</th>
-                    </tr>
-                    </thead>
-                    <tfoot>
-                    <tr>
-                        <th class="head0">仪器名称</th>
-                        <th class="head1">是否预约</th>
-                        <th class="head0">预约数量</th>
-                    </tr>
-                    </tfoot>
-                    <tbody>
-                    <tr>
-                        <td><label>超声波清洗仪</label></td>
-                        <td>
-                            <select name="select" class="uniformselect">
-                                <option value="">预约</option>
-                                <option value="" selected="selected">不预约</option>
+                <form class="stdform" action="/instrumentpage_class" method="post">
+
+                    <p>
+                        <label>实验仪器</label>
+                        <span class="field">
+                            <select name="name" class="uniformselect">
+                                <c:forEach var="" items="" varStatus="Status">
+                                    <option value=""></option>
+                                </c:forEach>
                             </select>
-                        </td>
-                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
-                    </tr>
-                    <tr>
-                        <td><label>天平</label></td>
-                        <td>
-                            <select name="select" class="uniformselect">
-                                <option value="">预约</option>
-                                <option value="" selected="selected">不预约</option>
+                        </span>
+                    </p>
+
+                    <p>
+                        <label>预约人姓名</label>
+                        <span class="field"><input type="text" name="bookingman" class="smallinput" /></span>
+                        <small class="desc">如：张三</small>
+                    </p>
+                    <p>
+                        <label>预约数量</label>
+                        <span class="field">
+                            <input type="text" name="bookingnumber" class="smallinput"/>
+                        </span>
+                    </p>
+
+                    <p>
+                        <label>时间选择</label>
+                        <span class="field">
+                            <select name="time" class="uniformselect">
+                            	<option value="8:00-9:35">8:00-9:35</option>
+                                <option value="9:50-11:25">9:50-11:25</option>
+                                <option value="2:00-3:35">2:00-3:35</option>
+                                <option value="3:55-5:35">3:55-5:35</option>
                             </select>
-                        </td>
-                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
-                    </tr>
-                    <tr>
-                        <td><label>吹风机</label></td>
-                        <td>
-                            <select name="select" class="uniformselect">
-                                <option value="">预约</option>
-                                <option value="" selected="selected">不预约</option>
-                            </select>
-                        </td>
-                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
-                    </tr>
-                    <tr>
-                        <td><label>水浴箱</label></td>
-                        <td>
-                            <select name="select" class="uniformselect">
-                                <option value="">预约</option>
-                                <option value="" selected="selected">不预约</option>
-                            </select>
-                        </td>
-                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
-                    </tr>
-                    <tr>
-                        <td><label>箱式电阻炉</label></td>
-                        <td>
-                            <select name="select" class="uniformselect">
-                                <option value="">预约</option>
-                                <option value="" selected="selected">不预约</option>
-                            </select>
-                        </td>
-                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
-                    </tr>
-                    <tr>
-                        <td><label>抛光机</label></td>
-                        <td>
-                            <select name="select" class="uniformselect">
-                                <option value="">预约</option>
-                                <option value="" selected="selected">不预约</option>
-                            </select>
-                        </td>
-                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
-                    </tr>
-                    <tr>
-                        <td><label>预磨机</label></td>
-                        <td>
-                            <select name="select" class="uniformselect">
-                                <option value="">预约</option>
-                                <option value="" selected="selected">不预约</option>
-                            </select>
-                        </td>
-                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
-                    </tr>
-                    <tr>
-                        <td><label>砂轮</label></td>
-                        <td>
-                            <select name="select" class="uniformselect">
-                                <option value="">预约</option>
-                                <option value="" selected="selected">不预约</option>
-                            </select>
-                        </td>
-                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
-                    </tr>
-                    <tr>
-                        <td><label>燃烧实验装置</label></td>
-                        <td>
-                            <select name="select" class="uniformselect">
-                                <option value="">预约</option>
-                                <option value="" selected="selected">不预约</option>
-                            </select>
-                        </td>
-                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
-                    </tr>
-                    <tr>
-                        <td><label>可控温电炉</label></td>
-                        <td>
-                            <select name="select" class="uniformselect">
-                                <option value="">预约</option>
-                                <option value="" selected="selected">不预约</option>
-                            </select>
-                        </td>
-                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
-                    </tr>
-                    <tr>
-                        <td><label>显微维式硬度计</label></td>
-                        <td>
-                            <select name="select" class="uniformselect">
-                                <option value="">预约</option>
-                                <option value="" selected="selected">不预约</option>
-                            </select>
-                        </td>
-                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
-                    </tr>
-                    <tr>
-                        <td><label>显微镜（带成像系统）</label></td>
-                        <td>
-                            <select name="select" class="uniformselect">
-                                <option value="">预约</option>
-                                <option value="" selected="selected">不预约</option>
-                            </select>
-                        </td>
-                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
-                    </tr>
-                    <tr>
-                        <td><label>光学显微镜</label></td>
-                        <td>
-                            <select name="select" class="uniformselect">
-                                <option value="">预约</option>
-                                <option value="" selected="selected">不预约</option>
-                            </select>
-                        </td>
-                        <td><input value="0" type="text" name="input1" class="smallinput" /></td>
-                    </tr>
-                    </tbody>
-                </table>
+                        </span>
+                    </p>
+
+
+                    <br clear="all" /><br />
+
+                    <p class="stdformbutton">
+                        <button class="submit radius2">提交</button>
+                        <input type="reset" class="reset radius2" value="撤销" />
+                    </p>
+
+
+
+                </form>
 
 
 

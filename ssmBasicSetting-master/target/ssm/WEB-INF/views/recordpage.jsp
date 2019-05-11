@@ -1,12 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 10641
-  Date: 2019/3/30
-  Time: 19:46
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" pageEncoding="utf-8"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -70,32 +64,6 @@
                 </ul>
             </li>
             <li class="current"><a href="recordpage" class="elements">记录</a></li>
-            <%--<li><a href="asserts/filemanager.html" class="gallery">File Manager</a></li>--%>
-            <%--<li><a href="asserts/widgets.html" class="widgets">Widgets</a></li>--%>
-            <%--<li><a href="asserts/calendar.html" class="calendar">Calendar</a></li>--%>
-            <%--<li><a href="asserts/support.html" class="support">Customer Support</a></li>--%>
-            <%--<li><a href="asserts/typography.html" class="typo">Typography</a></li>--%>
-            <%--<li><a href="asserts/buttons.html" class="buttons">Buttons &amp; Icons</a></li>--%>
-            <%--<li><a href="#error" class="error">Error Pages</a>--%>
-                <%--<span class="arrow"></span>--%>
-                <%--<ul id="error">--%>
-                    <%--<li><a href="asserts/notfound.html">Page Not Found</a></li>--%>
-                    <%--<li><a href="asserts/forbidden.html">Forbidden Page</a></li>--%>
-                    <%--<li><a href="asserts/internal.html">Internal Server Error</a></li>--%>
-                    <%--<li><a href="asserts/offline.html">Offline</a></li>--%>
-                <%--</ul>--%>
-            <%--</li>--%>
-            <%--<li><a href="#addons" class="addons">Addons</a>--%>
-                <%--<span class="arrow"></span>--%>
-                <%--<ul id="addons">--%>
-                    <%--<li><a href="asserts/newsfeed.html">News Feed</a></li>--%>
-                    <%--<li><a href="asserts/profile.html">Profile Page</a></li>--%>
-                    <%--<li><a href="asserts/productlist.html">Product List</a></li>--%>
-                    <%--<li><a href="asserts/photo.html">Photo/Video Sharing</a></li>--%>
-                    <%--<li><a href="asserts/gallery.html">Gallery</a></li>--%>
-                    <%--<li><a href="asserts/invoice.html">Invoice</a></li>--%>
-                <%--</ul>--%>
-            <%--</li>--%>
         </ul>
         <a class="togglemenu"></a>
         <br /><br />
@@ -128,33 +96,43 @@
                         <col class="con1" />
                         <col class="con0" />
                         <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
                     </colgroup>
 
                     <thead>
                     <tr>
                         <th class="head0">预约课程名称</th>
-                        <th class="head1">预约人</th>
+                        <th class="head1">预约实验名称</th>
+                        <th class="head0">预约班级/预约人</th>
+                        <th class="head1">预约人数</th>
                         <th class="head0">预约时间</th>
-                        <th class="head0">预约地点</th>
+                        <th class="head1">预约地点</th>
                     </tr>
                     </thead>
 
                     <tfoot>
                     <tr>
                         <th class="head0">预约课程名称</th>
-                        <th class="head1">预约人</th>
+                        <th class="head1">预约实验名称</th>
+                        <th class="head0">预约班级/预约人</th>
+                        <th class="head1">预约人数</th>
                         <th class="head0">预约时间</th>
-                        <th class="head0">预约地点</th>
+                        <th class="head1">预约地点</th>
                     </tr>
                     </tfoot>
 
                     <tbody>
-                    <tr>
-                        <td>热处理及硬度（工程材料A）</td>
-                        <td>张三</td>
-                        <td>9：00-10:00</td>
-                        <td class="center">B405</td>
-                    </tr>
+                    <c:forEach var="er" items="experimentrecord" varStatus="Status">
+                        <tr>
+                            <td name="coursename">${er.coursename}</td>
+                            <td name="experimentname">${er.experimentname}</td>
+                            <td name="bookingman">${er.bookingman}</td>
+                            <td name="bookingnumber">${er.bookingnumber}</td>
+                            <td name="time">${er.time}</td>
+                            <td name="classroom">${er.classroom}</td>
+                        </tr>
+                    </c:forEach>
 
                     <tr>
                         <td>原电池电动势</td>
