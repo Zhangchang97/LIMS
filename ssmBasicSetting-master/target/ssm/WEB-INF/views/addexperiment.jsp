@@ -70,7 +70,7 @@
                     <li><a href="addfacility">新增实验仪器</a></li>
                 </ul>
             </li>
-            <li><a href="recordpage" class="elements">记录</a></li>
+            <li><a href="record_teacher" class="elements">记录</a></li>
         </ul>
         <a class="togglemenu"></a>
         <br /><br />

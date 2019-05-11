@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
-
 @Controller
 @RequestMapping(value={"/"})
 public class HomeController {
@@ -85,11 +84,15 @@ public class HomeController {
         return "login";
     }
 
+    @RequestMapping("/error_login")
+    public String error_login(Model model) {
+        return "error_login";
+    }
+
     //登录页面处理
     @RequestMapping(value = "/login" , method = RequestMethod.POST)
     public String Loginsuccess(Model model, HttpServletRequest request ) {
         String username = request.getParameter("username");
-        logger.debug(username + "!!!!!!!!");
         String password = request.getParameter("password");
 
         UserLoginDTO userlogindto = new UserLoginDTO();
@@ -97,16 +100,24 @@ public class HomeController {
         userlogindto.setPassword(password);
 
         String level = userloginservice.LoginCheck(userlogindto);
-        logger.debug("已经将level取出来了，接下来进行判断");
-        if (level.isEmpty()){
-            return "login";
-        }
-        else if (level.equalsIgnoreCase("1")){
+        System.out.println("已经将level取出来了，接下来进行判断,且level="+level);
+
+        if(Integer.parseInt(level) == 1){
+            List<ExperimentInfoDTO> experimentInfoDTOList = getexperimentinfoservice.getExperimentInfo();
+            model.addAttribute("experimentinfo",experimentInfoDTOList);
+
+            List<FacilityInfoDTO> facilityInfoDTOList = getfacilityinfoservice.getFacilityInfo();
+            model.addAttribute("facilityinfo",facilityInfoDTOList);
             return "index_teacher";
-        }else if (level.equalsIgnoreCase("0")){
+        }else if(Integer.parseInt(level) == 0){
+            List<ExperimentInfoDTO> experimentInfoDTOList = getexperimentinfoservice.getExperimentInfo();
+            model.addAttribute("experimentinfo",experimentInfoDTOList);
+
+            List<FacilityInfoDTO> facilityInfoDTOList = getfacilityinfoservice.getFacilityInfo();
+            model.addAttribute("facilityinfo",facilityInfoDTOList);
             return "index";
         }else {
-            return "error";
+            return "error_login";
         }
     }
 
@@ -123,8 +134,8 @@ public class HomeController {
         List<FacilityInfoDTO> facilityInfoDTOList = getfacilityinfoservice.getFacilityInfo();
         model.addAttribute("facilityinfo",facilityInfoDTOList);
         for (int i = 0; i < 5; i++){
-        System.out.println("已经将实验仪器数据取出来了!!!"+facilityInfoDTOList.get(i).getName());
-        System.out.println(facilityInfoDTOList.get(i).getLevel());
+            System.out.println("已经将实验仪器数据取出来了!!!"+facilityInfoDTOList.get(i).getName());
+            System.out.println(facilityInfoDTOList.get(i).getLevel());
         }
         return "index";
     }
@@ -437,12 +448,7 @@ public class HomeController {
             model.addAttribute("facilityrecord",facilityRecordDTOList);
             return "recordpage";
         }
-}
-
-
-
-
-
+    }
 
 
     @RequestMapping("/recordpage")
@@ -457,4 +463,21 @@ public class HomeController {
         model.addAttribute("facilityrecord",facilityRecordDTOList);
         return "recordpage";
     }
+
+    @RequestMapping("/record_teacher")
+    public String record_teacher(Model model){
+        List<ExperimentRecordDTO> experimentRecordDTOList = getexperimentrecordservice.getExperimentRecord();
+        model.addAttribute("experimentrecord",experimentRecordDTOList);
+
+        List<FacilityRecordDTO> facilityRecordDTOList = getfacilityrecordservice.getFacilityRecord();
+        model.addAttribute("facilityrecord",facilityRecordDTOList);
+        return "record_teacher";
+    }
+
+
 }
+
+
+
+
+

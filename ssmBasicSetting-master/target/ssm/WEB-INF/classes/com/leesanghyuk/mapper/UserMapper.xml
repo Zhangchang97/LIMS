@@ -81,7 +81,7 @@
         VALUES (#{name},#{bookingman},#{bookingnumber},#{time})
     </insert>
 
-    <select id="getBooking" parameterType="FacilityInfoDTO">
+    <select id="getBooking" parameterType="FacilityInfoDTO" resultType="int">
         SELECT booking FROM facilityinfo WHERE name=#{name}
     </select>
 
